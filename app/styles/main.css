@@ -21,7 +21,14 @@
 body{
   font-family:'Droid Arabic Kufi';
 }
-
+#header{
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 50;
+}
 
 
 /* Customize container */
