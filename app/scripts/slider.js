@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2017, Codrops
  * http://www.codrops.com
  */
@@ -24,7 +24,7 @@
 			if (callNow) func.apply(context, args);
 		};
     };
-    
+
     class Slideshow {
         constructor(el) {
             this.DOM = {};
@@ -53,7 +53,7 @@
             this.DOM.nextCtrl = this.DOM.nav.querySelector('.slidenav__item--next');
             this.DOM.prevCtrl = this.DOM.nav.querySelector('.slidenav__item--prev');
             this.current = 0;
-            this.createFrame(); 
+            this.createFrame();
             this.initEvents();
         }
         createFrame() {
@@ -71,8 +71,8 @@
             this.DOM.svg.innerHTML = `
             <defs>
             <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#09012d"/>
-                <stop offset="100%" stop-color="#0f2b73"/>
+                <stop offset="0%" stop-color="#e7500f"/>
+                <stop offset="100%" stop-color="#f6aa35"/>
             </linearGradient>
             </defs>
             <path fill="${this.settings.frameFill}" d="${this.paths.initial}"/>`;
@@ -102,12 +102,12 @@
         initEvents() {
             this.DOM.nextCtrl.addEventListener('click', () => this.navigate('next'));
             this.DOM.prevCtrl.addEventListener('click', () => this.navigate('prev'));
-            
+
             window.addEventListener('resize', debounce(() => {
                 this.rect = this.DOM.el.getBoundingClientRect();
                 this.updateFrame();
             }, 20));
-            
+
             document.addEventListener('keydown', (ev) => {
                 const keyCode = ev.keyCode || ev.which;
                 if ( keyCode === 37 ) {
@@ -156,11 +156,11 @@
                             resolve();
                         }
                     });
-        
-                    this.current = dir === 'next' ? 
+
+                    this.current = dir === 'next' ?
                         this.current < this.slidesTotal-1 ? this.current + 1 : 0 :
-                        this.current > 0 ? this.current - 1 : this.slidesTotal-1; 
-                    
+                        this.current > 0 ? this.current - 1 : this.slidesTotal-1;
+
                     const newSlide = this.DOM.slides[this.current];
                     newSlide.classList.add('slide--current');
                     anime({
@@ -169,9 +169,9 @@
                         easing: this.settings.animation.slides.easing,
                         translateY: [dir === 'next' ? -1*this.rect.height : this.rect.height,0]
                     });
-        
+
                     const newSlideImg = newSlide.querySelector('.slide__img');
-                    
+
                     anime.remove(newSlideImg);
                     anime({
                         targets: newSlideImg,
@@ -180,7 +180,7 @@
                         translateY: [dir === 'next' ? -100 : 100, 0],
                         scale: [0.2,1]
                     });
-                    
+
                     const newTitleSlide = this.DOM.titlesSlides[this.current];
                     newTitleSlide.classList.add('slide--current');
                     anime({
