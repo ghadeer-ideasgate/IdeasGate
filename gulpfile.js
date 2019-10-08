@@ -1,4 +1,4 @@
-// generated on 2019-10-07 using generator-webapp 4.0.0-6
+// generated on 2019-10-08 using generator-webapp 4.0.0-6
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const fs = require('fs');
@@ -20,14 +20,8 @@ const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
 function styles() {
-  return src('app/styles/*.scss')
-    .pipe($.plumber())
+  return src('app/styles/*.css')
     .pipe($.if(!isProd, $.sourcemaps.init()))
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
     .pipe($.postcss([
       autoprefixer()
     ]))
@@ -168,7 +162,7 @@ function startAppServer() {
     '.tmp/fonts/**/*'
   ]).on('change', server.reload);
 
-  watch('app/styles/**/*.scss', styles);
+  watch('app/styles/**/*.css', styles);
   watch('app/scripts/**/*.js', scripts);
   watch('modernizr.json', modernizr);
   watch('app/fonts/**/*', fonts);

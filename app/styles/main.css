@@ -1,0 +1,37 @@
+/*-------  font face ----------*/
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  src: url('../fonts/DroidArabicKufi.woff2') format('woff2'),
+      url('../fonts/DroidArabicKufi.woff') format('woff'),
+      url('../fonts/DroidArabicKufi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  src: url('../fonts/DroidArabicKufi-Bold.woff2') format('woff2'),
+      url('../fonts/DroidArabicKufi-Bold.woff') format('woff'),
+      url('../fonts/DroidArabicKufi-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+body{
+  font-family:'Droid Arabic Kufi';
+}
+
+
+
+/* Customize container */
+@media (min-width: 48em) {
+
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+
+}
