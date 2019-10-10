@@ -25,9 +25,9 @@
   --nav-a-size: .875rem;
 }
 /* ---end  variables ------ */
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 body {
   font-family: var(--ar-font);
 }
@@ -39,7 +39,13 @@ h6, p, ul li {
 }
 ul>li{
   padding: 0;
+  list-style: none;
 }
+ul{
+  margin:0;
+  padding:0;
+}
+
 /* --- header start ---*/
 #header {
   position: absolute;
@@ -62,8 +68,11 @@ section#slider {
 }
 /* --- header end ---*/
 /* --- services start---- */
+#mainService{
+  padding-top:70px!important;
+}
 .icon-block {
-  padding: 35px 20px;
+  padding: 60px 20px;   /*was 35*/
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -113,7 +122,7 @@ section#slider {
 
 /* ----Portfolio start ----- */
 .cbp-l-filters-button .cbp-filter-item {
-  background-color: #FFFFFF;
+  background-color: var(--white-text);
   border: 1px solid #ECECEC;
   color: #888888;
   cursor: pointer;
@@ -124,14 +133,14 @@ section#slider {
 }
 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active {
   background-color: #ee7d1c;
-  color: #fff;
+  color: var(--white-text);
   border-color: #ee7d1c;
   border-radius: 11px;
 }
 /* ----Portfolio end ----- */
 /* ----Clients start ----- */
 #clients{
-  background-color: rgba(198, 195, 194, 0.29);
+  background-color: rgba(198, 195, 194, 0.8);
 }
 
 /* ----Clients end ----- */
@@ -139,10 +148,43 @@ section#slider {
 #footer{
   padding-bottom:0;
 }
-.bottomFooter{
-  background-color: #ee7d1c;
-  color: #fff;
+.footer-top {
+  padding: 40px 0;
+  /* background-color: #ee7d1c; */
+  /* background-color: #191f29; */
+  /* color: var(--white-text); */
 }
+.footer-bottom {
+  background-color: #ee7d1c;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* color: var(--white-text); */
+}
+.copyright {
+  text-align: center;
+}
+.logo-footer img {
+  margin-bottom: 25px;
+}
+.list-social {
+  padding-top: 15px;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+#footer h5{
+  font-weight: bold;
+    font-size: 1.05rem;
+    color: #ee7d1c;
+    margin-bottom: 20px;
+}
+ul.list-menu li {
+  margin-bottom: 3px;
+}
+
+
+
 .rtl .navbar-nav .nav-item+.nav-item, [dir=rtl] .navbar-nav .nav-item+.nav-item {
   margin-right: 0rem;}
 /* ----footer end ----- */

@@ -235,12 +235,12 @@ main {
 	color: var(--color-stitle);
 }
 h2.slide__title {
-  max-width: 350px;
+  max-width: 480px;
   font-weight: bold;
   line-height: 1.5;
-  right: 20%;
-  font-size: 3rem;
-  text-align: center;
+  right: 14%;
+  font-size: 2.1rem;
+  text-align: center
 }
 .slide__desc {
 	position: relative;
