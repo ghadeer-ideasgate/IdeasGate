@@ -137,6 +137,15 @@ section#slider {
 .aboutContent p {
   line-height: 2;
 }
+.img img {
+  border-radius: 45px;
+}
+.img:nth-child(2) {
+  position: absolute;
+  z-index: 10;
+  top: 43%;
+  left: 29%;
+}
 /* ----About end---- */
 
 /* ----Portfolio start ----- */
