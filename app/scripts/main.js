@@ -6,6 +6,7 @@
 // https://getbootstrap.com/docs/4.0/components/popovers/#example-enable-popovers-everywhere
 // $(function () { $('[data-toggle="popover"]').popover(); });
 
+
 (function($, window, document, undefined) {
   'use strict';
 
@@ -46,15 +47,27 @@
       lightboxCounter: '<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>',
   });
 })(jQuery, window, document);
+
 $(document).ready(function(){
-  var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
+  $('.customer-logos').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+          breakpoint: 768,
+          settings: {
+              slidesToShow: 4
+          }
+      }, {
+          breakpoint: 520,
+          settings: {
+              slidesToShow: 3
+          }
+      }]
+  });
 });
 
-});

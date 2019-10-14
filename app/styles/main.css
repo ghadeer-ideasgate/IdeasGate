@@ -34,7 +34,8 @@ body {
 }
 h6,
 p,
-ul li {
+ul li
+,.btn {
   font-size: 0.875rem;
 }
 ul > li {
@@ -63,7 +64,7 @@ ul {
   margin-right: 0;
 }
 nav.navbar.navbar-expand-lg.navbar-light.fixed-top.sticky {
-  background: #fff;
+  background: var(--white-text);
 }
 #contactForm {
   background: var(--orange);
@@ -96,8 +97,13 @@ section#slider {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   box-shadow: 0 3px 15px #4c4c4d26;
-  background-color: #ffffff;
+  background-color: var(--white-text)fff;
   text-align: center;
+  -webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-ms-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
 }
 .icon-block h3 {
   font-weight: 700;
@@ -110,13 +116,19 @@ section#slider {
   margin-bottom: 25px;
   height: auto;
 }
-.icon-block.middle {
+.icon-block:hover {
   margin-top: -20px;
   background-color: var(--orange);
   color: var(--white-text);
 }
-.icon-block.middle h3 {
+.icon-block:hover h3 {
   color: var(--white-text);
+}
+.aboutcontent {
+  margin: 5px 0px;
+}
+.companygoals {
+  padding: 50px 27px 27px 27px;
 }
 /* ----services End---- */
 /* ----About start---- */
@@ -138,15 +150,29 @@ section#slider {
   line-height: 2;
 }
 .img img {
-  border-radius: 45px;
+  border-radius: 25px;
 }
-.img:nth-child(2) {
+.aboutImgs{
+  position:relative;
+}
+/* .img.front {
+  position: relative;
+  z-index: 0;
+  top: 64px;
+  left: 0%;
+  width: 60%;
+}
+.img.back {
+  width: 53%;
   position: absolute;
-  z-index: 10;
-  top: 43%;
-  left: 29%;
+  left: 0;
+  z-index:1;
+} */
+.mission,.vision,.goals{
+  align-items: center;
+    vertical-align: middle!important;
+    justify-content: start;
 }
-/* ----About end---- */
 
 /* ----Portfolio start ----- */
 .cbp-l-filters-button .cbp-filter-item {
@@ -179,7 +205,120 @@ h6.text-center.my-4.desc-text {
 #clients {
   background-color: rgba(198, 195, 194, 0.29);
 }
+.slick-slide {
+    margin: 0px 20px;
+}
 
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
 /* ----Clients end ----- */
 /* ------------Blog-------- */
 .ce-feature-box-4 {
@@ -198,7 +337,7 @@ h6.text-center.my-4.desc-text {
   float: left;
   z-index: 3;
   padding: 20px;
-  color: #fff;
+  color: var(--white-text);
   left: 20px;
   top: 20px;
   font-size: 14px;
@@ -223,7 +362,7 @@ h6.text-center.my-4.desc-text {
   left: 6%;
   padding: 40px 60px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--white-text);
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.02);
   transition: all 0.3s ease-out 0s;
 }
@@ -240,10 +379,10 @@ min-height:auto;
 #whyUs {
   background: #020305;
   padding: 0;
-  color:#fff;
+  color: var(--white-text);
 }
 #whyUs h3{
-  color: #ee7d1c;
+  color: fff;
 }
 .whyusContent {
   height: 100%;
@@ -252,13 +391,13 @@ min-height:auto;
 .whyicon:hover i {
   color: #ee7d1c;
 }
-.whyicon + p {
+.whyicon + p,.whyicon +ul {
   margin: 17px;
 }
 /* ----footer start ----- */
 #footer {
   padding-bottom: 0;
-  color: #fff;
+  color: var(--white-text);
 }
 .footer-top {
   padding: 40px 0;
@@ -281,6 +420,42 @@ min-height:auto;
 .list-social {
   padding-top: 15px;
 }
+/* social icons */
+.list-social li {
+  display: inline-block;
+  margin-left: 10px;
+}
+.list-social a {
+  background-color: var(--white-text);
+  width: 35px;
+  color: var(--orange);
+  line-height: 35px;
+  font-size: 14px;
+  padding: 0;
+  border-radius: 100%;
+  height: 35px;
+}
+.list-social a i {
+  line-height: 35px;
+}
+ul.list-social.list-inline i:before {
+  font-size: 17px!important;
+}
+.btn.btn-facebook:hover, .btn.btn-facebook:focus, .btn.btn-facebook:active {
+  color: white;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+.btn.btn-twitter:hover, .btn.btn-twitter:focus, .btn.btn-twitter:active {
+  color: white;
+  background-color: #55acee;
+  border-color: #55acee;
+}
+.btn.btn-instgram:hover, .btn.btn-instgram:focus, .btn.btn-instgram:hover {
+  color: white;
+  background-color: #9b6954;
+  border-color: #9b6954;
+}
 .list-inline {
   padding-left: 0;
   list-style: none;
@@ -294,6 +469,16 @@ min-height:auto;
 ul.list-menu li {
   margin-bottom: 3px;
 }
+.list-contact i:before {
+  font-size: 23px;
+}
+ul.list-contact .whyicon {
+  float: right;
+  padding-left: 10px;
+}
+ul.list-contact li {
+  padding-bottom: 10px;
+}
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
@@ -301,12 +486,12 @@ ul.list-menu li {
   position: relative;
   margin-top: 15px;
   height: 45px;
-  width: 100%;
-  border-radius: 10px;
+  width: 36%;
+  border-radius: 8px;
   -moz-border-radius: 10px;
   -wbekit-border-radius: 10px;
   padding: 0 15px 0 15px;
-  color: #fff;
+  color: var(--white-text);
   background: var(--orange);
 }
 .form-control {

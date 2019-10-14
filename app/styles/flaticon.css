@@ -42,4 +42,14 @@ font-style: normal;
 .flaticon-twitter:before { content: "\f109"; }
 .flaticon-linkedin:before { content: "\f10a"; }
 .flaticon-facebook:before { content: "\f10b"; }
+.flaticon-data:before { content: "\f10c"; }
+.flaticon-idea:before { content: "\f10d"; }
+.flaticon-theme:before { content: "\f10e"; }
+.flaticon-ads:before { content: "\f10f"; }
+.flaticon-advertising:before { content: "\f110"; }
+.flaticon-banner:before { content: "\f111"; }
+.flaticon-instagram:before { content: "\f112"; }
+.flaticon-location:before { content: "\f113"; }
+.flaticon-email:before { content: "\f114"; }
+.flaticon-phone:before { content: "\f115"; }
 
