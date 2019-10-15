@@ -78,9 +78,9 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto ">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="index.html"
-                  >الرئيسية <span class="sr-only">(current)</span></a
+                  >الرئيسية</a
                 >
               </li>
               <li class="nav-item">
@@ -95,8 +95,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="blog.html">المدونة </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">أتصل بنا </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="contact.html"><span class="sr-only">(current)</span>أتصل بنا </a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -112,7 +112,7 @@
     </header>
 
     <!-- content -->
-    <section class="page-title page-bg bg-opacity sectionPadding">
+    <section class="page-title page-bg bg-opacity sectionPadding-120">
     	<div class="container">
     		<div class="row">
     			<div class="col-md-12">
@@ -129,21 +129,21 @@
     </section>
     <section class="sectionPadding">
       <div class="container">
-        <div class="section-title">
+        <!-- <div class="section-title text-center">
           <h2>اتصل <span>بنا</span></h2>
           <span class="s-title-icon"><i class="icofont icofont-diamond"></i></span>
-        </div>
-        <div class="row">
+        </div> -->
+        <div class="row sectionPadding-60">
            <div class="col-md-4">
               <div class="contact-info text-center">
-                   <span><i class="fa fa-map-marker"></i></span>
+                   <span><i class="flaticon-location"></i></span>
                    <h4>العنوان</h4>
                    <h6>لوران الإسكندرية - 711 ش الحرية</h6>
               </div>
            </div>
            <div class="col-md-4">
                <div class="contact-info text-center">
-                   <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                   <span><i class="flaticon-phone" aria-hidden="true"></i></span>
                    <h4>تليفون</h4>
                    <h6>+20 155 016 4774 - 035702005 - 03 5703003
                 </h6>
@@ -151,23 +151,41 @@
            </div>
            <div class="col-md-4">
                <div class="contact-info text-center">
-                   <span><i class="fa fa-map-marker"></i></span>
+                   <span><i class="flaticon-email"></i></span>
                    <h4>البريد الإلكترونى</h4>
                    <h6>info@ideasgate.com</h6>
               </div>
            </div>
-           <!-- <div class="col-md-3">
-               <div class="contact-info text-center">
-                   <span><i class="fa fa-globe" aria-hidden="true"></i></span>
-                   <h4>Our Website</h4>
-                   <h6>info@domaim.com</h6>
-              </div>
-           </div> -->
+
         </div>
+
+          <!-- <div class="socialSection">
+              <div class="row sectionPadding-60">
+              <ul class="list-social list-inline">
+                  <li>
+                    <a href="https://www.facebook.com/Ideasgate" class="btn btn-circle btn-facebook">
+                      <i class="flaticon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/Ideasgate" class="btn btn-circle btn-twitter">
+                      <i class="flaticon-twitter"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.instagram.com/ideasgate_/" class="btn btn-circle btn-instgram">
+                      <i class="flaticon-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+          </div>
+
+        </div> -->
         <div class="row padding-60">
            <div class="col-md-7 contact-team">
-              <h3 class="text-center">تواصل <span>معنا</span></h3>
-              <div class="contact-send-message">
+              <h3 class="sectionPadding-30">تواصل <span>معنا</span></h3>
+              <div class="contact-send-message subscribe-form">
                  <form class="contact-form row">
                     <div class="col col-sm-6">
                       <input type="text" class="form-control" placeholder="الأسم*">
@@ -185,13 +203,13 @@
                          <textarea class="form-control" placeholder="الرسالة*"></textarea>
                      </div>
                      <div class="col col-sm-12 text-center">
-                        <button type="submit" class="btn btn-default btn-style hvr-shutter-out-vertical">ارسال</button>
+                        <button type="submit" class="btn btn-subscribe bg-color-1">ارسال</button>
                      </div>
                  </form>
               </div>
            </div>
            <div class="col-md-5">
-               <div id="map" class="thumbnail">
+               <div id="map">
                </div>
            </div>
         </div>
@@ -380,10 +398,23 @@
       type="text/javascript"
       src="scripts/jquery.cubeportfolio.min.js"
     ></script>
+    <!-- map script -->
+    <script>
+        // Initialize and add the map
+        function initMap() {
+          // The location of Uluru
+          var uluru = {lat: -25.344, lng: 131.036};
+          // The map, centered at Uluru
+          var map = new google.maps.Map(
+              document.getElementById('map'), {zoom: 4, center: uluru});
+          // The marker, positioned at Uluru
+          var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLk4o042J-T_CA5ZkSrNl_ocwloHL0j8&callback=initMap">
+            </script>
     <!-- build:js scripts/main.js -->
-    <!-- <script src="scripts/owl.carousel.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script> -->
-
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>

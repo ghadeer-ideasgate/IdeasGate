@@ -167,6 +167,15 @@ body {
 .sectionPadding {
   padding: 90px 0;
 }
+.sectionPadding-120 {
+  padding: 120px 0;
+}
+.sectionPadding-60 {
+  padding: 60px 0;
+}
+.sectionPadding-30 {
+  padding: 30px 0;
+}
 h6,
 p,
 ul li
@@ -543,6 +552,78 @@ ul.list-contact li {
   margin-right: 0rem;
 }
 /* ----footer end ----- */
+/* ==============inner pages ======= */
+.page-bg{
+  background: rgba(0,0,0,0) url("../images/helloquence-5fNmWej4tAA-unsplash.jpg");/* Change the dummy image*/
+background-clip: initial;
+background-color: rgba(255,255,255,0);
+background-origin: initial;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+z-index: 0;
+}
+.page-title h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+.page-title .breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content:center;
+}
+
+
+
+.page-title .breadcrumb ul {
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.page-title .breadcrumb ul li {
+  color: #fff;
+  float: right;
+  padding-right: 12px;
+  margin-right: 12px;
+  font-style: italic;
+  position: relative;
+}
+
+.page-title .breadcrumb ul li:after {
+  font-family: "FontAwesome";
+  content: "\f105";
+  position: absolute;
+  right: 0;
+}
+
+.page-title .breadcrumb ul li:last-child {
+  margin: 0;
+  padding: 0;
+}
+
+.page-title .breadcrumb ul li:last-child:after {
+  content: "";
+}
+
+.page-title .breadcrumb ul li a {
+  color: #fff;
+}
+
+.page-title .breadcrumb ul li a:hover {
+  color: #f6ba18;
+}
+.bg-silver{
+  background: #F9F9F9;
+}
 
 /* ========= contact us ========= */
 
@@ -560,6 +641,7 @@ ul.list-contact li {
   -o-transition: all 0.3s;
   -ms-transition: all 0.3s;
   transition: all .3s;
+  border-radius: 8px;
  }
  .contact-info:after {
     content: '';
@@ -581,21 +663,22 @@ ul.list-contact li {
         display: block;
     width: 60px;
     height: 60px;
-    border: 5px solid #f6f6f6;
+    /* border: 5px solid #f6f6f6; */
     line-height: 50px;
     font-size: 30px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     margin: 0px auto;
     position: relative;
     margin-bottom: 20px;
     overflow: hidden;
-
-
 }
-.contact-info:hover span {
+.contact-info span i:before {
+  font-size: 40px;
+}
+/* .contact-info:hover span {
 
     border: 5px solid #fff;
-}
+} */
 .contact-info span i{
     z-index: 1;
     width: 100%;
@@ -608,7 +691,7 @@ ul.list-contact li {
 }
 .contact-info h4{
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
  }
  .contact-info h6{
   font-size: 14px;
@@ -631,7 +714,7 @@ ul.list-contact li {
  .contact-form input{
   height: 50px;
   margin-bottom: 20px;
-  border-radius: 0px;
+  border-radius: 8px;
   outline: none;
  }
    .contact-form input:focus{
@@ -652,11 +735,11 @@ ul.list-contact li {
 
   }
   #map{
-    margin-top: 75px;
-    height:330px;
+    margin-top: 40px;
+    height:420px;
     width: 100%;
     border-radius: 0px;
-    box-shadow: 0px 0px 10px 5px #f6f6f6;
+    /* box-shadow: 0px 0px 10px 5px #f6f6f6; */
   }
 
 

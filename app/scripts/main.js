@@ -55,11 +55,11 @@
       $('body').addClass('loaded');
     },500)
   });
-  $('#clientsCarousel').carousel({
-    interval: 5000
-  });
+
 })(jQuery, window, document);
 
 
 
-
+$('#clientsCarousel').carousel({
+  interval: 5000
+});
