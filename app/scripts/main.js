@@ -46,10 +46,20 @@
       lightboxTitleSrc: 'data-title',
       lightboxCounter: '<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>',
   });
+
+  /*-------------------------------------
+      Preloader
+  -------------------------------------*/
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('body').addClass('loaded');
+    },500)
+  });
+  $('#clientsCarousel').carousel({
+    interval: 5000
+  });
 })(jQuery, window, document);
 
 
 
-$('#clientsCarousel').carousel({
-  interval: 5000
-});
+
