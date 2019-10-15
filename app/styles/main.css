@@ -37,7 +37,7 @@
 #loader {
   display: block;
   position: relative;
-  left: 50%;
+  right: 45%;
   top: 50%;
   width: 150px;
   height: 150px;
@@ -61,7 +61,7 @@
       bottom: 5px;
       border-radius: 50%;
       border: 3px solid transparent;
-      border-top-color: #fff;
+      border-top-color: #ee7d1c;
 
       -webkit-animation: spin 3s linear infinite;
       animation: spin 3s linear infinite;
@@ -199,7 +199,8 @@ ul {
   margin-right: 0;
 }
 nav.navbar.navbar-expand-lg.navbar-light.fixed-top.sticky {
-  background: var(--white-text);
+  background: rgba(255, 255, 255, 0.6196078431372549);
+  border-bottom: 2px solid var(--orange);
 }
 #contactForm {
   background: var(--orange);
@@ -444,7 +445,7 @@ min-height:auto;
   /* color: var(--white-text); */
 }
 .footer-bottom {
-  background-color: #05070c;
+  background-color: #080a10;
   padding-top: 12px;
   padding-bottom: 12px;
   /* color: var(--white-text); */
