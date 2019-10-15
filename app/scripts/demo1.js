@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2018, Codrops
  * http://www.codrops.com
  */
@@ -22,9 +22,9 @@
             slicesOrigin: {show: 'top', hide: 'bottom'}
         },
         {
-            slicesTotal: 7, 
-            slicesColor: '#111', 
-            orientation: 'horizontal', 
+            slicesTotal: 7,
+            slicesColor: '#111',
+            orientation: 'horizontal',
             slicesOrigin:  {show: 'right', hide: 'right'}
         },
         {
@@ -50,7 +50,7 @@
     class Slideshow {
         constructor(el) {
             this.DOM = {el: el};
-            this.DOM.slides = Array.from(this.DOM.el.querySelectorAll('.slide'));
+            this.DOM.slides = Array.from(this.DOM.el.querySelectorAll('#slider .slide'));
             this.slidesTotal = this.DOM.slides.length;
             this.current = 0;
             this.uncoverItems = [];
@@ -91,13 +91,13 @@
             });
         }
     }
-    
+
     // Preload all the images in the page..
 	imagesLoaded(document.querySelectorAll('.slide__img'), {background: true}, () => {
         document.body.classList.remove('loading');
-        
+
         const slideshow = new Slideshow(document.querySelector('.slides'));
-        
+
         const pagination = document.querySelector('.pagination');
         const triggers = Array.from(pagination.querySelectorAll('.pagination__item'));
         triggers.forEach((trigger,pos) => {
@@ -111,7 +111,7 @@
                 trigger.classList.add('pagination__item--current');
             })
         });
-    
+
         document.addEventListener('keydown', (ev) => {
             if ( slideshow.isAnimating ) return;
             const keyCode = ev.keyCode || ev.which;
