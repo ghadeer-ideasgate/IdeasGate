@@ -53,12 +53,15 @@
   $(document).ready(function(){
     setTimeout(function(){
       $('body').addClass('loaded');
-    },500)
+    },500);
+    $('.owl-carousel').owlCarousel();
   });
 
 })(jQuery, window, document);
 
-
+// $(document).ready(function(){
+//   $('.owl-carousel').owlCarousel();
+// });
 
 $('#clientsCarousel').carousel({
   interval: 5000
