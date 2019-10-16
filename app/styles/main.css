@@ -212,7 +212,7 @@ ul {
   margin-right: 0;
 }
 nav.navbar.navbar-expand-lg.navbar-light.fixed-top.sticky {
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 1);
   border-bottom: 1px solid var(--orange);
 }
 #contactForm {
@@ -349,7 +349,7 @@ transition: all 0.5s ease;
 }
 /* ----services End---- */
 /* ----About start---- */
-#about {
+#about ,#designInner{
   background: var(--orange);
   color: var(--white-text);
 }
@@ -836,9 +836,18 @@ z-index: 0;
 iframe {
   width: 100%;
 }
-
-
-
+/* -=============services page==========*/
+.marketsub h6 {
+  font-weight: 600;
+  color: #ee7d1c;
+}
+.graphicsub h6 {
+  font-weight: 600;
+  color: #fff;
+}
+.web li {
+  list-style: arabic-indic;
+  line-height: 2;}
 /* =========slider */
 /* h2.slide__title {
   position: absolute;
