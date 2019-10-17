@@ -233,7 +233,7 @@ nav.navbar.navbar-expand-lg.navbar-light.fixed-top.sticky {
 /* ---hover effect--- */
 .snip1189 {
   text-align: center;
-  text-transform: uppercase;
+
   font-weight: 500;
 }
 .snip1189 * {
@@ -669,7 +669,7 @@ ul.list-contact li {
 /* ----footer end ----- */
 /* ==============inner pages ======= */
 .page-bg{
-  background: rgba(0,0,0,0) url("../images/helloquence-5fNmWej4tAA-unsplash.jpg");/* Change the dummy image*/
+  background: rgba(0,0,0,0) url(../images/glenn-carstens-peters-P1qyEf1g0HU-unsplash.jpg);/* Change the dummy image*/
 background-clip: initial;
 background-color: rgba(255,255,255,0);
 background-origin: initial;
@@ -681,11 +681,11 @@ z-index: 0;
 }
 .page-title h2 {
   font-size: 36px;
-  font-weight: 600;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  text-transform: uppercase;
+    font-weight: 400;
+    color: #0f1125;
+    text-align: center;
+    margin: 50px 0 10px;
+
 }
 
 
@@ -705,10 +705,10 @@ z-index: 0;
 }
 
 .page-title .breadcrumb ul li {
-  color: #fff;
+  color: #0f1125;
   float: right;
-  padding-right: 12px;
-  margin-right: 12px;
+  padding-left: 12px;
+  margin-left: 12px;
   font-style: italic;
   position: relative;
 }
@@ -718,8 +718,11 @@ z-index: 0;
   content: "\f105";
   position: absolute;
   right: 0;
+  visibility: hidden;
 }
-
+.page-link {
+  color: #07090f;
+}
 .page-title .breadcrumb ul li:last-child {
   margin: 0;
   padding: 0;
@@ -730,7 +733,7 @@ z-index: 0;
 }
 
 .page-title .breadcrumb ul li a {
-  color: #fff;
+  color: #ee7d1c;
 }
 
 /* .page-title .breadcrumb ul li a:hover {
@@ -739,7 +742,9 @@ z-index: 0;
 .bg-silver{
   background: #F9F9F9;
 }
-
+.contact-info h4 {
+  color: #000;
+}
 /* ========= contact us ========= */
 
 .contact-info{
@@ -750,7 +755,7 @@ z-index: 0;
   display: block;
   z-index: 1;
     background: #fff;
-  border:1px solid #ccc;
+    border: 1px solid #ee7d1c;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -758,6 +763,7 @@ z-index: 0;
   transition: all .3s;
   border-radius: var( --border-radius);
  }
+
  .contact-info:after {
     content: '';
     position: absolute;
@@ -790,10 +796,7 @@ z-index: 0;
 .contact-info span i:before {
   font-size: 40px;
 }
-/* .contact-info:hover span {
 
-    border: 5px solid #fff;
-} */
 .contact-info span i{
     z-index: 1;
     width: 100%;
@@ -821,7 +824,7 @@ z-index: 0;
 
  .contact-team h3{
   margin-bottom: 30px;
-  text-transform: uppercase;
+
  }
  .contact-team h3 span{
   color:var(--orange);
