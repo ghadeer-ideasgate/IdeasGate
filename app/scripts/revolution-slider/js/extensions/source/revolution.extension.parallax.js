@@ -5,38 +5,38 @@
  * @author ThemePunch
 *********************************************/
 (function($) {
-"use strict";
+'use strict';
 var _R = jQuery.fn.revolution,
 	_ISM = _R.is_mobile(),
-	extension = {	alias:"Parallax Min JS",
-					name:"revolution.extensions.parallax.min.js",
-					min_core: "5.4.5",
-					version:"2.2.3"
+	extension = {	alias:'Parallax Min JS',
+					name:'revolution.extensions.parallax.min.js',
+					min_core: '5.4.5',
+					version:'2.2.3'
 			  };
 
 jQuery.extend(true,_R, {	
 	
 	checkForParallax : function(container,opt) {		
-		if (_R.compare_version(extension).check==="stop") return false;
+		if (_R.compare_version(extension).check==='stop') return false;
 		var _ = opt.parallax;
 
 		if (_.done) return;
 		_.done = true;
 
-		if (_ISM && _.disable_onmobile=="on") return false;
+		if (_ISM && _.disable_onmobile=='on') return false;
 
 
-		if (_.type=="3D" || _.type=="3d") {			
+		if (_.type=='3D' || _.type=='3d') {			
 			punchgs.TweenLite.set(opt.c,{overflow:_.ddd_overflow});
 			punchgs.TweenLite.set(opt.ul,{overflow:_.ddd_overflow});		
-			if (opt.sliderType!="carousel" && _.ddd_shadow=="on") {
+			if (opt.sliderType!='carousel' && _.ddd_shadow=='on') {
 				opt.c.prepend('<div class="dddwrappershadow"></div>')
-				punchgs.TweenLite.set(opt.c.find('.dddwrappershadow'),{force3D:"auto",transformPerspective:1600,transformOrigin:"50% 50%", width:"100%",height:"100%",position:"absolute",top:0,left:0,zIndex:0});			
+				punchgs.TweenLite.set(opt.c.find('.dddwrappershadow'),{force3D:'auto',transformPerspective:1600,transformOrigin:'50% 50%', width:'100%',height:'100%',position:'absolute',top:0,left:0,zIndex:0});			
 			}
 		}
 		
 		function setDDDInContainer(li) {
-			if (_.type=="3D" || _.type=="3d") {
+			if (_.type=='3D' || _.type=='3d') {
 				li.find('.slotholder').wrapAll('<div class="dddwrapper" style="width:100%;height:100%;position:absolute;top:0px;left:0px;overflow:hidden"></div>');				
 				li.find('.tp-parallax-wrap').wrapAll('<div class="dddwrapper-layer" style="width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:5;overflow:'+_.ddd_layer_overflow+';"></div>');				
 
@@ -49,14 +49,14 @@ jQuery.extend(true,_R, {
 
 				dddwlbg.appendTo(dddw);
 								
-				if (opt.sliderType=="carousel") {
-					 if (_.ddd_shadow=="on") dddw.addClass("dddwrappershadow");					 
+				if (opt.sliderType=='carousel') {
+					 if (_.ddd_shadow=='on') dddw.addClass('dddwrappershadow');					 
 					 punchgs.TweenLite.set(dddw,{borderRadius:opt.carousel.border_radius});
 				}
-				punchgs.TweenLite.set(li,{overflow:"visible",transformStyle:"preserve-3d",perspective:1600});
-				punchgs.TweenLite.set(dddw,{force3D:"auto",transformOrigin:"50% 50%"});					
-				punchgs.TweenLite.set(dddwl,{force3D:"auto",transformOrigin:"50% 50%",zIndex:5});					
-				punchgs.TweenLite.set(opt.ul,{transformStyle:"preserve-3d",transformPerspective:1600});					
+				punchgs.TweenLite.set(li,{overflow:'visible',transformStyle:'preserve-3d',perspective:1600});
+				punchgs.TweenLite.set(dddw,{force3D:'auto',transformOrigin:'50% 50%'});					
+				punchgs.TweenLite.set(dddwl,{force3D:'auto',transformOrigin:'50% 50%',zIndex:5});					
+				punchgs.TweenLite.set(opt.ul,{transformStyle:'preserve-3d',transformPerspective:1600});					
 			}
 		}
 
@@ -64,8 +64,8 @@ jQuery.extend(true,_R, {
 			setDDDInContainer(jQuery(this));						
 		});
 
-		if ((_.type=="3D" || _.type=="3d") && opt.c.find('.tp-static-layers').length>0) {
-			punchgs.TweenLite.set(opt.c.find('.tp-static-layers'),{top:0, left:0,width:"100%",height:"100%"});
+		if ((_.type=='3D' || _.type=='3d') && opt.c.find('.tp-static-layers').length>0) {
+			punchgs.TweenLite.set(opt.c.find('.tp-static-layers'),{top:0, left:0,width:'100%',height:'100%'});
 			setDDDInContainer(opt.c.find('.tp-static-layers'));
 		}
 		_.pcontainers = new Array();
@@ -76,8 +76,8 @@ jQuery.extend(true,_R, {
 		opt.c.find('.tp-revslider-slidesli .slotholder, .tp-revslider-slidesli .rs-background-video-layer').each(function() {
 			var t = jQuery(this),
 				l = t.data('bgparallax') || opt.parallax.bgparallax;		
-			l = l == "on" ? 1 : l;				
-			if (l!==undefined && l!=="off") {									
+			l = l == 'on' ? 1 : l;				
+			if (l!==undefined && l!=='off') {									
 				_.bgcontainers.push(t);
 				_.bgcontainer_depths.push(opt.parallax.levels[parseInt(l,0)-1]/100);
 			}
@@ -91,13 +91,13 @@ jQuery.extend(true,_R, {
 					tpw = pw.closest('.tp-parallax-wrap');												
 				
 				tpw.data('parallaxlevel',_.levels[i-1])
-				tpw.addClass("tp-parallax-container");
+				tpw.addClass('tp-parallax-container');
 				_.pcontainers.push(tpw);
 				_.pcontainer_depths.push(_.levels[i-1]);
 			});		
 
 		
-		if (_.type=="mouse" || _.type=="scroll+mouse" || _.type=="mouse+scroll" || _.type=="3D" || _.type=="3d") {
+		if (_.type=='mouse' || _.type=='scroll+mouse' || _.type=='mouse+scroll' || _.type=='3D' || _.type=='3d') {
 		
 			container.mouseenter(function(event) {
 				var currslide = container.find('.active-revslide'),
@@ -105,8 +105,8 @@ jQuery.extend(true,_R, {
 					l = container.offset().left,
 					ex = (event.pageX-l),
 					ey =  (event.pageY-t);
-				currslide.data("enterx",ex);
-				currslide.data("entery",ey);
+				currslide.data('enterx',ex);
+				currslide.data('entery',ey);
 			});
 
 			container.on('mousemove.hoverdir, mouseleave.hoverdir, trigger3dpath',function(event,data) {				
@@ -114,15 +114,15 @@ jQuery.extend(true,_R, {
 
 				
 				// CALCULATE DISTANCES
-				if (_.origo=="enterpoint") {
+				if (_.origo=='enterpoint') {
 					var	t = container.offset().top,
 						l = container.offset().left;
 
-					if (currslide.data("enterx")==undefined) currslide.data("enterx",(event.pageX-l));
-					if (currslide.data("entery")==undefined) currslide.data("entery",(event.pageY-t));										
+					if (currslide.data('enterx')==undefined) currslide.data('enterx',(event.pageX-l));
+					if (currslide.data('entery')==undefined) currslide.data('entery',(event.pageY-t));										
 
-					var mh = currslide.data("enterx") || (event.pageX-l),
-						mv = currslide.data("entery") || (event.pageY-t),
+					var mh = currslide.data('enterx') || (event.pageX-l),
+						mv = currslide.data('entery') || (event.pageY-t),
 						diffh = (mh - (event.pageX - l)),
 						diffv = (mv - (event.pageY - t)),
 						s = _.speed/1000 || 0.4;
@@ -135,7 +135,7 @@ jQuery.extend(true,_R, {
 				}
 				
 
-				if (event.type=="mouseleave") {
+				if (event.type=='mouseleave') {
 					diffh = _.ddd_lasth || 0;
 					diffv = _.ddd_lastv || 0;
 					s = 1.5;									
@@ -145,18 +145,18 @@ jQuery.extend(true,_R, {
 				for (var i=0;i<_.pcontainers.length;i++) {				
 					var pc = _.pcontainers[i],
 						bl = _.pcontainer_depths[i],
-						pl = _.type=="3D" || _.type=="3d" ? bl/200 : bl/100,
+						pl = _.type=='3D' || _.type=='3d' ? bl/200 : bl/100,
 						offsh =	 diffh * pl,
 						offsv =	 diffv * pl;		
-						if (_.type=="scroll+mouse" || _.type=="mouse+scroll" ) 
-							punchgs.TweenLite.to(pc,s,{force3D:"auto",x:offsh,ease:punchgs.Power3.easeOut,overwrite:"all"});
+						if (_.type=='scroll+mouse' || _.type=='mouse+scroll' ) 
+							punchgs.TweenLite.to(pc,s,{force3D:'auto',x:offsh,ease:punchgs.Power3.easeOut,overwrite:'all'});
 						else
-							punchgs.TweenLite.to(pc,s,{force3D:"auto",x:offsh,y:offsv,ease:punchgs.Power3.easeOut,overwrite:"all"});
+							punchgs.TweenLite.to(pc,s,{force3D:'auto',x:offsh,y:offsv,ease:punchgs.Power3.easeOut,overwrite:'all'});
 				};
 
-				if (_.type=="3D" || _.type=="3d") {
+				if (_.type=='3D' || _.type=='3d') {
 					var sctor = '.tp-revslider-slidesli .dddwrapper, .dddwrappershadow, .tp-revslider-slidesli .dddwrapper-layer, .tp-static-layers .dddwrapper-layer';
-					if (opt.sliderType==="carousel") sctor = ".tp-revslider-slidesli .dddwrapper, .tp-revslider-slidesli .dddwrapper-layer, .tp-static-layers .dddwrapper-layer";
+					if (opt.sliderType==='carousel') sctor = '.tp-revslider-slidesli .dddwrapper, .tp-revslider-slidesli .dddwrapper-layer, .tp-static-layers .dddwrapper-layer';
 					opt.c.find(sctor).each(function() {										
 						var t = jQuery(this),
 							pl = _.levels[_.levels.length-1]/200,										
@@ -168,25 +168,25 @@ jQuery.extend(true,_R, {
 							zz = 0,
 							itslayer = false;
 
-							if (t.hasClass("dddwrapper-layer")) {
+							if (t.hasClass('dddwrapper-layer')) {
 								zz = _.ddd_z_correction || 65;
 								itslayer = true;
 							}
 
-						if (t.hasClass("dddwrapper-layer")) {
+						if (t.hasClass('dddwrapper-layer')) {
 							offsh=0;
 							offsv=0;
 						}
 												
-						if (li.hasClass("active-revslide") || opt.sliderType!="carousel")
-							if (_.ddd_bgfreeze!="on" || (itslayer))								
-								punchgs.TweenLite.to(t,s,{rotationX:offrh, rotationY:-offrv, x:offsh, z:zz,y:offsv,ease:punchgs.Power3.easeOut,overwrite:"all"});								  	
+						if (li.hasClass('active-revslide') || opt.sliderType!='carousel')
+							if (_.ddd_bgfreeze!='on' || (itslayer))								
+								punchgs.TweenLite.to(t,s,{rotationX:offrh, rotationY:-offrv, x:offsh, z:zz,y:offsv,ease:punchgs.Power3.easeOut,overwrite:'all'});								  	
 							else 								
-								punchgs.TweenLite.to(t,0.5,{force3D:"auto",rotationY:0, rotationX:0, z:0,ease:punchgs.Power3.easeOut,overwrite:"all"});
+								punchgs.TweenLite.to(t,0.5,{force3D:'auto',rotationY:0, rotationX:0, z:0,ease:punchgs.Power3.easeOut,overwrite:'all'});
 						else 
-							punchgs.TweenLite.to(t,0.5,{force3D:"auto",rotationY:0,x:0,y:0, rotationX:0, z:0,ease:punchgs.Power3.easeOut,overwrite:"all"});
+							punchgs.TweenLite.to(t,0.5,{force3D:'auto',rotationY:0,x:0,y:0, rotationX:0, z:0,ease:punchgs.Power3.easeOut,overwrite:'all'});
 																	
-						if (event.type=="mouseleave")
+						if (event.type=='mouseleave')
 						 	punchgs.TweenLite.to(jQuery(this),3.8,{z:0, ease:punchgs.Power3.easeOut});
 					});
 				}					
@@ -212,7 +212,7 @@ jQuery.extend(true,_R, {
 				  		s = _.speed/1000 || 3,				  	
 				  		pcnts = [];
 					
-					currslide.find(".tp-parallax-container").each(function(i){					
+					currslide.find('.tp-parallax-container').each(function(i){					
 						pcnts.push(jQuery(this));
 					});
 					container.find('.tp-static-layers .tp-parallax-container').each(function(){
@@ -225,12 +225,12 @@ jQuery.extend(true,_R, {
 							pl = bl/100,
 							offsh =	 diffh * pl*2,
 							offsv =	 diffv * pl*4;									
-							punchgs.TweenLite.to(pc,s,{force3D:"auto",x:offsh,y:offsv,ease:punchgs.Power3.easeOut,overwrite:"all"});	
+							punchgs.TweenLite.to(pc,s,{force3D:'auto',x:offsh,y:offsv,ease:punchgs.Power3.easeOut,overwrite:'all'});	
 					});
 					
-					if (_.type=="3D" || _.type=="3d") {
+					if (_.type=='3D' || _.type=='3d') {
 						var sctor = '.tp-revslider-slidesli .dddwrapper, .dddwrappershadow, .tp-revslider-slidesli .dddwrapper-layer, .tp-static-layers .dddwrapper-layer';
-						if (opt.sliderType==="carousel") sctor = ".tp-revslider-slidesli .dddwrapper, .tp-revslider-slidesli .dddwrapper-layer, .tp-static-layers .dddwrapper-layer";
+						if (opt.sliderType==='carousel') sctor = '.tp-revslider-slidesli .dddwrapper, .tp-revslider-slidesli .dddwrapper-layer, .tp-static-layers .dddwrapper-layer';
 						opt.c.find(sctor).each(function() {			
 							var t = jQuery(this),
 								pl = _.levels[_.levels.length-1]/200,
@@ -242,25 +242,25 @@ jQuery.extend(true,_R, {
 								zz = 0,
 								itslayer = false;
 
-							if (t.hasClass("dddwrapper-layer")) {
+							if (t.hasClass('dddwrapper-layer')) {
 								zz = _.ddd_z_correction || 65;
 								itslayer = true;
 							}
 
-							if (t.hasClass("dddwrapper-layer")) {
+							if (t.hasClass('dddwrapper-layer')) {
 								offsh=0;
 								offsv=0;
 							}
 												
-							if (li.hasClass("active-revslide") || opt.sliderType!="carousel")
-								if (_.ddd_bgfreeze!="on" || (itslayer))								
-									punchgs.TweenLite.to(t,s,{rotationX:offrh, rotationY:-offrv, x:offsh, z:zz,y:offsv,ease:punchgs.Power3.easeOut,overwrite:"all"});								  	
+							if (li.hasClass('active-revslide') || opt.sliderType!='carousel')
+								if (_.ddd_bgfreeze!='on' || (itslayer))								
+									punchgs.TweenLite.to(t,s,{rotationX:offrh, rotationY:-offrv, x:offsh, z:zz,y:offsv,ease:punchgs.Power3.easeOut,overwrite:'all'});								  	
 								else 								
-									punchgs.TweenLite.to(t,0.5,{force3D:"auto",rotationY:0, rotationX:0, z:0,ease:punchgs.Power3.easeOut,overwrite:"all"});
+									punchgs.TweenLite.to(t,0.5,{force3D:'auto',rotationY:0, rotationX:0, z:0,ease:punchgs.Power3.easeOut,overwrite:'all'});
 							else 
-								punchgs.TweenLite.to(t,0.5,{force3D:"auto",rotationY:0,z:0,x:0,y:0, rotationX:0, ease:punchgs.Power3.easeOut,overwrite:"all"});
+								punchgs.TweenLite.to(t,0.5,{force3D:'auto',rotationY:0,z:0,x:0,y:0, rotationX:0, ease:punchgs.Power3.easeOut,overwrite:'all'});
 																	
-							if (event.type=="mouseleave")
+							if (event.type=='mouseleave')
 							 	punchgs.TweenLite.to(jQuery(this),3.8,{z:0, ease:punchgs.Power3.easeOut});
 						});
 					}
@@ -272,7 +272,7 @@ jQuery.extend(true,_R, {
 		_s.bgs = new Array();		
 
 		if (_s.on) {		
-			if (_s.on_slidebg==="on")
+			if (_s.on_slidebg==='on')
 				for (var i=0;i<opt.allslotholder.length;i++) {													
 					_s.bgs.push(opt.allslotholder[i]);
 				}
@@ -294,7 +294,7 @@ jQuery.extend(true,_R, {
 			opt.scrollTicker = true;		
 			if (_ISM) {		
 				punchgs.TweenLite.ticker.fps(150);
-				punchgs.TweenLite.ticker.addEventListener("tick",function() {_R.scrollHandling(opt);},container,false,1);
+				punchgs.TweenLite.ticker.addEventListener('tick',function() {_R.scrollHandling(opt);},container,false,1);
 			} else {				
 				document.addEventListener('scroll',function(e) {						
 					_R.scrollHandling(opt,true);											
@@ -328,7 +328,7 @@ jQuery.extend(true,_R, {
 		opt.scrollproc = proc;
 
 		if (_R.callBackHandling)
-			_R.callBackHandling(opt,"parallax","start");
+			_R.callBackHandling(opt,'parallax','start');
 
 		if (_v.enable) {
 			var area = 1-Math.abs(proc);
@@ -352,10 +352,10 @@ jQuery.extend(true,_R, {
 		}
 					
 		// SCROLL BASED PARALLAX EFFECT 
-		if (_ISM && _.disable_onmobile=="on") return false;
+		if (_ISM && _.disable_onmobile=='on') return false;
 
-		if (_.type!="3d" && _.type!="3D") {
-			if (_.type=="scroll" || _.type=="scroll+mouse" || _.type=="mouse+scroll") 		
+		if (_.type!='3d' && _.type!='3D') {
+			if (_.type=='scroll' || _.type=='scroll+mouse' || _.type=='mouse+scroll') 		
 				if (_.pcontainers) 		
 					for (var i=0;i<_.pcontainers.length;i++) {
 						if (_.pcontainers[i].length>0) {
@@ -364,7 +364,7 @@ jQuery.extend(true,_R, {
 								offsv = Math.round((proc * -(pl*opt.conh)*10))/10 || 0,
 								s = speedoverwrite!==undefined ? speedoverwrite :  _.speedls/1000 || 0;
 							pc.data('parallaxoffset',offsv);		
-							punchgs.TweenLite.to(pc,s,{overwrite:"auto",force3D:"auto",y:offsv})
+							punchgs.TweenLite.to(pc,s,{overwrite:'auto',force3D:'auto',y:offsv})
 						}
 					}											
 			if (_.bgcontainers)
@@ -374,41 +374,41 @@ jQuery.extend(true,_R, {
 						offsv =	proc * -(l*opt.conh) || 0,
 						s = speedoverwrite!==undefined ? speedoverwrite : _.speedbg/1000 || 0;	
 
-					punchgs.TweenLite.to(t,s,{position:"absolute",top:"0px",left:"0px",backfaceVisibility:"hidden",force3D:"true",y:offsv+"px"});											
+					punchgs.TweenLite.to(t,s,{position:'absolute',top:'0px',left:'0px',backfaceVisibility:'hidden',force3D:'true',y:offsv+'px'});											
 				}							
 		}
 
 		// SCROLL BASED BLUR,FADE,GRAYSCALE EFFECT
 		var _s = opt.scrolleffect;
-		if (_s.on && (_s.disable_on_mobile!=="on" || !_ISM)) { 
+		if (_s.on && (_s.disable_on_mobile!=='on' || !_ISM)) { 
 			
 			var _fproc = Math.abs(proc)-(_s.tilt/100);
 			_fproc = _fproc<0 ? 0 : _fproc;			
 			if (_s.layers!==false) {									
 				var fadelevel = 1 - (_fproc *_s.multiplicator_layers),
-					seo = { backfaceVisibility:"hidden",force3D:"true",z:0.001,perspective:600};
-				if (_s.direction=="top" && proc>=0) fadelevel=1;
-				if (_s.direction=="bottom" && proc<=0) fadelevel=1;
+					seo = { backfaceVisibility:'hidden',force3D:'true',z:0.001,perspective:600};
+				if (_s.direction=='top' && proc>=0) fadelevel=1;
+				if (_s.direction=='bottom' && proc<=0) fadelevel=1;
 				fadelevel = fadelevel>1 ? 1 : fadelevel < 0 ? 0 : fadelevel;	
 								
 
-				if (_s.fade==="on")
+				if (_s.fade==='on')
 					seo.opacity = fadelevel;
 
-				if (_s.scale==="on") {					
+				if (_s.scale==='on') {					
 					var scalelevel = (fadelevel);
 					seo.scale = 1+(1-scalelevel);	
 					
 				}
 
-				if (_s.blur==="on") {					
+				if (_s.blur==='on') {					
 					var blurlevel = (1-fadelevel) * _s.maxblur;
 					seo['-webkit-filter'] = 'blur('+blurlevel+'px)';
 					seo['filter'] = 'blur('+blurlevel+'px)';
 				}
 
 				
-				if (_s.grayscale==="on") {					
+				if (_s.grayscale==='on') {					
 					var graylevel = (1-fadelevel) * 100,
 						gf = 'grayscale('+graylevel+'%)';
 					seo['-webkit-filter'] = seo['-webkit-filter']===undefined ? gf : seo['-webkit-filter']+' '+gf;
@@ -419,28 +419,28 @@ jQuery.extend(true,_R, {
 
 			if (_s.bgs!==false) {									
 				var fadelevel = 1 - (_fproc *_s.multiplicator),
-					seo = { backfaceVisibility:"hidden",force3D:"true"};
-				if (_s.direction=="top" && proc>=0) fadelevel=1;
-				if (_s.direction=="bottom" && proc<=0) fadelevel=1;					
+					seo = { backfaceVisibility:'hidden',force3D:'true'};
+				if (_s.direction=='top' && proc>=0) fadelevel=1;
+				if (_s.direction=='bottom' && proc<=0) fadelevel=1;					
 				fadelevel = fadelevel>1 ? 1 : fadelevel < 0 ? 0 : fadelevel;
 
-				if (_s.fade==="on")
+				if (_s.fade==='on')
 					seo.opacity = fadelevel;
 
-				if (_s.scale==="on") {					
+				if (_s.scale==='on') {					
 					var scalelevel = fadelevel;
 					//seo.scale = scalelevel;
-					punchgs.TweenLite.set(jQuery('.tp-kbimg-wrap'),{transformOrigin:"50% 50%",scale:scalelevel,force3D:true})
+					punchgs.TweenLite.set(jQuery('.tp-kbimg-wrap'),{transformOrigin:'50% 50%',scale:scalelevel,force3D:true})
 				}
 
-				if (_s.blur==="on") {					
+				if (_s.blur==='on') {					
 					var blurlevel = (1-fadelevel) * _s.maxblur;
 					seo['-webkit-filter'] = 'blur('+blurlevel+'px)';
 					seo['filter'] = 'blur('+blurlevel+'px)';
 				}
 
 				
-				if (_s.grayscale==="on") {					
+				if (_s.grayscale==='on') {					
 					var graylevel = (1-fadelevel) * 100,
 						gf = 'grayscale('+graylevel+'%)';
 					seo['-webkit-filter'] = seo['-webkit-filter']===undefined ? gf : seo['-webkit-filter']+' '+gf;
@@ -452,7 +452,7 @@ jQuery.extend(true,_R, {
 		}		
 		
 		if (_R.callBackHandling)
-			_R.callBackHandling(opt,"parallax","end");		
+			_R.callBackHandling(opt,'parallax','end');		
 		
 	}
 		

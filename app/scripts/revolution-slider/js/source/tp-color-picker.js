@@ -195,9 +195,9 @@
 	
 	getRgbToHex: function(r, g, b) {
 		
-		return '#' + ("0" + parseInt(r).toString(16)).slice(-2) + 
-					 ("0" + parseInt(g).toString(16)).slice(-2) + 
-					 ("0" + parseInt(b).toString(16)).slice(-2);
+		return '#' + ('0' + parseInt(r).toString(16)).slice(-2) + 
+					 ('0' + parseInt(g).toString(16)).slice(-2) + 
+					 ('0' + parseInt(b).toString(16)).slice(-2);
 		
 	},
 	
@@ -402,7 +402,7 @@
 		deleteBuffer = 10,
 		warningBuffer = 15,
 		sliderHeight = 180,
-		dragObj = {axis: "x", containment: "#rev-cpicker-point-wrap"};
+		dragObj = {axis: 'x', containment: '#rev-cpicker-point-wrap'};
 		
 	var lang = {
 		

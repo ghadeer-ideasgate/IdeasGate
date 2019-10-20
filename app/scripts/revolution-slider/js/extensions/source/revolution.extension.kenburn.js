@@ -5,12 +5,12 @@
  * @author ThemePunch
 *********************************************/
 (function($) {
-"use strict";
+'use strict';
 var _R = jQuery.fn.revolution,
-	extension = {	alias:"KenBurns Min JS",
-					name:"revolution.extensions.kenburn.min.js",
-					min_core: "5.4",
-					version:"1.3.1"
+	extension = {	alias:'KenBurns Min JS',
+					name:'revolution.extensions.kenburn.min.js',
+					min_core: '5.4',
+					version:'1.3.1'
 			  };
 
 ///////////////////////////////////////////
@@ -19,7 +19,7 @@ var _R = jQuery.fn.revolution,
 jQuery.extend(true,_R, {
 
 	stopKenBurn : function(l) {		
-		if (_R.compare_version(extension).check==="stop") return false;
+		if (_R.compare_version(extension).check==='stop') return false;
 
 		if (l.data('kbtl')!=undefined)			
 		l.data('kbtl').pause();				
@@ -27,13 +27,13 @@ jQuery.extend(true,_R, {
 
 	startKenBurn :  function(l,opt,prgs) {		
 
-		if (_R.compare_version(extension).check==="stop") return false;
+		if (_R.compare_version(extension).check==='stop') return false;
 
 		var d = l.data(),
 			i = l.find('.defaultimg'),
 			s = i.data('lazyload') || i.data('src'),
 			i_a = d.owidth / d.oheight,
-			cw = opt.sliderType==="carousel" ?  opt.carousel.slide_width : opt.ul.width(),
+			cw = opt.sliderType==='carousel' ?  opt.carousel.slide_width : opt.ul.width(),
 			ch = opt.ul.height(),
 			c_a = cw / ch;
 
@@ -48,7 +48,7 @@ jQuery.extend(true,_R, {
 		// NO KEN BURN IMAGE EXIST YET
 		if (l.find('.tp-kbimg').length==0) {
 			var mediafilter = i.data('mediafilter');
-			mediafilter = mediafilter === undefined ? "" : mediafilter;
+			mediafilter = mediafilter === undefined ? '' : mediafilter;
 			l.append('<div class="tp-kbimg-wrap '+mediafilter+'" style="z-index:2;width:100%;height:100%;top:0px;left:0px;position:absolute;"><img class="tp-kbimg" src="'+s+'" style="position:absolute;" width="'+d.owidth+'" height="'+d.oheight+'"></div>');
 			l.data('kenburn',l.find('.tp-kbimg'));
 		}
@@ -70,9 +70,9 @@ jQuery.extend(true,_R, {
 
 			getKBCorners = function(d,cw,ch,ofs,o) {
 
-				var p = d.bgposition.split(" ") || "center center",
-					ho = p[0] == "center"  ? "50%" : p[0] == "left" || p [1] == "left" ? "0%" : p[0]=="right" || p[1] =="right" ? "100%" : p[0],
-					vo = p[1] == "center" ? "50%" : p[0] == "top" || p [1] == "top" ? "0%" : p[0]=="bottom" || p[1] =="bottom" ? "100%" : p[1];
+				var p = d.bgposition.split(' ') || 'center center',
+					ho = p[0] == 'center'  ? '50%' : p[0] == 'left' || p [1] == 'left' ? '0%' : p[0]=='right' || p[1] =='right' ? '100%' : p[0],
+					vo = p[1] == 'center' ? '50%' : p[0] == 'top' || p [1] == 'top' ? '0%' : p[0]=='bottom' || p[1] =='bottom' ? '100%' : p[1];
 				
 				ho = parseInt(ho,0)/100 || 0;
 				vo = parseInt(vo,0)/100 || 0;
@@ -90,9 +90,9 @@ jQuery.extend(true,_R, {
 			kcalcL = function(cw,ch,d) {				
 				var f=d.scalestart/100,
 					fe=d.scaleend/100,
-					ofs = d.offsetstart != undefined ? d.offsetstart.split(" ") || [0,0] : [0,0],
-					ofe = d.offsetend != undefined ? d.offsetend.split(" ") || [0,0] : [0,0];
-				d.bgposition = d.bgposition == "center center" ? "50% 50%" : d.bgposition;
+					ofs = d.offsetstart != undefined ? d.offsetstart.split(' ') || [0,0] : [0,0],
+					ofe = d.offsetend != undefined ? d.offsetend.split(' ') || [0,0] : [0,0];
+				d.bgposition = d.bgposition == 'center center' ? '50% 50%' : d.bgposition;
 				
 				
 				var o = new Object(),
@@ -121,8 +121,8 @@ jQuery.extend(true,_R, {
 				o.end.scale = fe;
 
 				d.rotatestart = d.rotatestart===0 ? 0.01 : d.rotatestart;
-				o.start.rotation = d.rotatestart+"deg";
-				o.end.rotation = d.rotateend+"deg";		
+				o.start.rotation = d.rotatestart+'deg';
+				o.end.rotation = d.rotateend+'deg';		
 				
 				// MAKE SURE THAT OFFSETS ARE NOT TOO HIGH
 				var c = getKBCorners(d,cw,ch,ofs,o);
@@ -147,10 +147,10 @@ jQuery.extend(true,_R, {
 
 				
 
-				o.starto.x = ofs[0]+"px";
-				o.starto.y = ofs[1]+"px";
-				o.endo.x = ofe[0]+"px";
-				o.endo.y = ofe[1]+"px";				
+				o.starto.x = ofs[0]+'px';
+				o.starto.y = ofs[1]+'px';
+				o.endo.x = ofe[0]+'px';
+				o.endo.y = ofe[1]+'px';				
 				o.end.ease = o.endo.ease = d.ease;
 				o.end.force3D = o.endo.force3D = true;
 				return o;
@@ -171,8 +171,8 @@ jQuery.extend(true,_R, {
 
 
 		
-		anim.start.transformOrigin = "0% 0%";
-		anim.starto.transformOrigin = "0% 0%";	
+		anim.start.transformOrigin = '0% 0%';
+		anim.starto.transformOrigin = '0% 0%';	
 
 		kbtl.add(punchgs.TweenLite.fromTo(k,d.duration/1000,anim.start,anim.end),0);
 		kbtl.add(punchgs.TweenLite.fromTo(kw,d.duration/1000,anim.starto,anim.endo),0);
@@ -183,7 +183,7 @@ jQuery.extend(true,_R, {
 				blurElementEnd = {a:d.blurend, ease:anim.endo.ease},
 				blurAnimation = new punchgs.TweenLite(blurElement, d.duration/1000, blurElementEnd);
 
-			blurAnimation.eventCallback("onUpdate", function(kw) {				
+			blurAnimation.eventCallback('onUpdate', function(kw) {				
 				punchgs.TweenLite.set(kw,{filter:'blur('+blurElement.a+'px)',webkitFilter:'blur('+blurElement.a+'px)'});
 			},[kw]);
 			kbtl.add(blurAnimation,0);			

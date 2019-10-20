@@ -5,13 +5,13 @@
  * @author ThemePunch
 *********************************************/
 (function($) {
-"use strict";
+'use strict';
 var _R = jQuery.fn.revolution,
 	_ISM = _R.is_mobile(),
-	extension = {	alias:"Navigation Min JS",
-					name:"revolution.extensions.navigation.min.js",
-					min_core: "5.4.0",
-					version:"1.3.5"
+	extension = {	alias:'Navigation Min JS',
+					name:'revolution.extensions.navigation.min.js',
+					min_core: '5.4.0',
+					version:'1.3.5'
 			  };
 
 
@@ -62,12 +62,12 @@ jQuery.extend(true,_R, {
 						w = b.outerWidth()+parseInt((otbu.space===undefined? 0:otbu.space),0),
 						h = b.outerHeight()+parseInt((otbu.space===undefined? 0:otbu.space),0);					
 					
-				if (otbu.direction==="vertical") {
-					b.css({top:((am-1)*h)+"px", left:"0px"});
+				if (otbu.direction==='vertical') {
+					b.css({top:((am-1)*h)+'px', left:'0px'});
 					bw.css({height:(((am-1)*h) + b.outerHeight()),width:b.outerWidth()});
 				}
 				else {
-					b.css({left:((am-1)*w)+"px", top:"0px"});
+					b.css({left:((am-1)*w)+'px', top:'0px'});
 					bw.css({width:(((am-1)*w) + b.outerWidth()),height:b.outerHeight()});			
 				}
 				});
@@ -105,14 +105,14 @@ jQuery.extend(true,_R, {
 		
 
 		
-		var	lof = _R.getHorizontalOffset(opt.c.parent(),"left"),
-			rof = _R.getHorizontalOffset(opt.c.parent(),"right");
+		var	lof = _R.getHorizontalOffset(opt.c.parent(),'left'),
+			rof = _R.getHorizontalOffset(opt.c.parent(),'right');
 
 		if (ckNO(opt.navigation.bullets)) {
-			if (opt.sliderLayout!="fullscreen" && opt.sliderLayout!="fullwidth") {
+			if (opt.sliderLayout!='fullscreen' && opt.sliderLayout!='fullwidth') {
 				// OFFSET ADJUSTEMENT FOR LEFT ARROWS BASED ON THUMBNAILS AND TABS OUTTER
 				opt.navigation.bullets.h_offset_old = opt.navigation.bullets.h_offset_old === undefined ? opt.navigation.bullets.h_offset : opt.navigation.bullets.h_offset_old;
-				opt.navigation.bullets.h_offset = opt.navigation.bullets.h_align==="center" ? opt.navigation.bullets.h_offset_old+lof/2 -rof/2: opt.navigation.bullets.h_offset_old+lof-rof;
+				opt.navigation.bullets.h_offset = opt.navigation.bullets.h_align==='center' ? opt.navigation.bullets.h_offset_old+lof/2 -rof/2: opt.navigation.bullets.h_offset_old+lof-rof;
 			}
 			setNavElPositions(opt.c.find('.tp-bullets'),opt.navigation.bullets,opt);		
 		}
@@ -125,13 +125,13 @@ jQuery.extend(true,_R, {
 		
 		if (ckNO(opt.navigation.arrows)) {
 			
-			if (opt.sliderLayout!="fullscreen" && opt.sliderLayout!="fullwidth") {
+			if (opt.sliderLayout!='fullscreen' && opt.sliderLayout!='fullwidth') {
 				// OFFSET ADJUSTEMENT FOR LEFT ARROWS BASED ON THUMBNAILS AND TABS OUTTER
 				opt.navigation.arrows.left.h_offset_old = opt.navigation.arrows.left.h_offset_old === undefined ? opt.navigation.arrows.left.h_offset : opt.navigation.arrows.left.h_offset_old;
-				opt.navigation.arrows.left.h_offset = opt.navigation.arrows.left.h_align==="right" ?  opt.navigation.arrows.left.h_offset_old+rof : opt.navigation.arrows.left.h_offset_old+lof;
+				opt.navigation.arrows.left.h_offset = opt.navigation.arrows.left.h_align==='right' ?  opt.navigation.arrows.left.h_offset_old+rof : opt.navigation.arrows.left.h_offset_old+lof;
 
 				opt.navigation.arrows.right.h_offset_old = opt.navigation.arrows.right.h_offset_old === undefined ? opt.navigation.arrows.right.h_offset : opt.navigation.arrows.right.h_offset_old;
-				opt.navigation.arrows.right.h_offset = opt.navigation.arrows.right.h_align==="right" ? opt.navigation.arrows.right.h_offset_old+rof : opt.navigation.arrows.right.h_offset_old+lof;
+				opt.navigation.arrows.right.h_offset = opt.navigation.arrows.right.h_align==='right' ? opt.navigation.arrows.right.h_offset_old+rof : opt.navigation.arrows.right.h_offset_old+lof;
 			}
 			setNavElPositions(opt.c.find('.tp-leftarrow.tparrows'),opt.navigation.arrows.left,opt);
 			setNavElPositions(opt.c.find('.tp-rightarrow.tparrows'),opt.navigation.arrows.right,opt);
@@ -148,7 +148,7 @@ jQuery.extend(true,_R, {
 
 	// MANAGE THE NAVIGATION
 	 createNavigation : function(container,opt) {
-	 	if (_R.compare_version(extension).check==="stop") return false;
+	 	if (_R.compare_version(extension).check==='stop') return false;
 		var cp = container.parent(),		
 			_a = opt.navigation.arrows, _b = opt.navigation.bullets, _c = opt.navigation.thumbnails, _d = opt.navigation.tabs,
 			a = ckNO(_a), b = ckNO(_b), c = ckNO(_c), d = ckNO(_d);
@@ -192,26 +192,26 @@ jQuery.extend(true,_R, {
 			
 			//cp.find('.tp-bullet, .tp-thumb, .tp-tab').removeClass("selected");			
 			
-			var si = container.find(".next-revslide").length==0 ? container.find(".active-revslide").data("index") : container.find(".next-revslide").data("index");			
+			var si = container.find('.next-revslide').length==0 ? container.find('.active-revslide').data('index') : container.find('.next-revslide').data('index');			
 			
 			container.find('.tp-bullet').each(function() {
 				var _t = jQuery(this);		
 				if (_t.data('liref')===si) 
-					_t.addClass("selected");
+					_t.addClass('selected');
 				else
-					_t.removeClass("selected");
+					_t.removeClass('selected');
 			});		
 
 			cp.find('.tp-thumb, .tp-tab').each(function() {
 				var _t = jQuery(this);				
 				if (_t.data('liref')===si) {			
-					_t.addClass("selected");	
-					if (_t.hasClass("tp-tab"))			
+					_t.addClass('selected');	
+					if (_t.hasClass('tp-tab'))			
 						moveThumbsInPosition(cp.find('.tp-tabs'),_d);				
 					else
 						moveThumbsInPosition(cp.find('.tp-thumbs'),_c);				
 				} else
-					_t.removeClass("selected");		
+					_t.removeClass('selected');		
 				
 			});		
 			
@@ -244,11 +244,11 @@ jQuery.extend(true,_R, {
 				_a.right.j.html(inst);
 				
 				if (!_a.rtl) {				
-					punchgs.TweenLite.set(_a.left.j.find('.tp-arr-imgholder'),{backgroundImage:"url("+opt.thumbs[pi].src+")"});
-					punchgs.TweenLite.set(_a.right.j.find('.tp-arr-imgholder'),{backgroundImage:"url("+opt.thumbs[ni].src+")"});			
+					punchgs.TweenLite.set(_a.left.j.find('.tp-arr-imgholder'),{backgroundImage:'url('+opt.thumbs[pi].src+')'});
+					punchgs.TweenLite.set(_a.right.j.find('.tp-arr-imgholder'),{backgroundImage:'url('+opt.thumbs[ni].src+')'});			
 				} else {
-					punchgs.TweenLite.set(_a.left.j.find('.tp-arr-imgholder'),{backgroundImage:"url("+opt.thumbs[ni].src+")"});
-					punchgs.TweenLite.set(_a.right.j.find('.tp-arr-imgholder'),{backgroundImage:"url("+opt.thumbs[pi].src+")"});			
+					punchgs.TweenLite.set(_a.left.j.find('.tp-arr-imgholder'),{backgroundImage:'url('+opt.thumbs[ni].src+')'});
+					punchgs.TweenLite.set(_a.right.j.find('.tp-arr-imgholder'),{backgroundImage:'url('+opt.thumbs[pi].src+')'});			
 				}
 			}
 
@@ -262,42 +262,42 @@ jQuery.extend(true,_R, {
 		
 		
 		// HOVER OVER ELEMENTS SHOULD SHOW/HIDE NAVIGATION ELEMENTS
-		cp.on("mouseenter mousemove",function() {
+		cp.on('mouseenter mousemove',function() {
 
-			if (!cp.hasClass("tp-mouseover")) {
-				cp.addClass("tp-mouseover");
+			if (!cp.hasClass('tp-mouseover')) {
+				cp.addClass('tp-mouseover');
 				
 				punchgs.TweenLite.killDelayedCallsTo(showHideNavElements);
 				
-				if (a && _a.hide_onleave) showHideNavElements(cp.find('.tparrows'),_a,"show");
-				if (b && _b.hide_onleave) showHideNavElements(cp.find('.tp-bullets'),_b,"show");		
-				if (c && _c.hide_onleave) showHideNavElements(cp.find('.tp-thumbs'),_c,"show");
-				if (d && _d.hide_onleave) showHideNavElements(cp.find('.tp-tabs'),_d,"show");
+				if (a && _a.hide_onleave) showHideNavElements(cp.find('.tparrows'),_a,'show');
+				if (b && _b.hide_onleave) showHideNavElements(cp.find('.tp-bullets'),_b,'show');		
+				if (c && _c.hide_onleave) showHideNavElements(cp.find('.tp-thumbs'),_c,'show');
+				if (d && _d.hide_onleave) showHideNavElements(cp.find('.tp-tabs'),_d,'show');
 				
 				// ON MOBILE WE NEED TO HIDE ELEMENTS EVEN AFTER TOUCH
 				if (_ISM) {
-					cp.removeClass("tp-mouseover");		
+					cp.removeClass('tp-mouseover');		
 					callAllDelayedCalls(container,opt);
 				}
 			}
 		});
 		
-		cp.on("mouseleave",function() {
-			cp.removeClass("tp-mouseover");		
+		cp.on('mouseleave',function() {
+			cp.removeClass('tp-mouseover');		
 			callAllDelayedCalls(container,opt);
 		});
 
 		// FIRST RUN HIDE ALL ELEMENTS 
-		if (a && _a.hide_onleave) showHideNavElements(cp.find('.tparrows'),_a,"hide",0);
-		if (b && _b.hide_onleave) showHideNavElements(cp.find('.tp-bullets'),_b,"hide",0);	
-		if (c && _c.hide_onleave) showHideNavElements(cp.find('.tp-thumbs'),_c,"hide",0);
-		if (d && _d.hide_onleave) showHideNavElements(cp.find('.tp-tabs'),_d,"hide",0);
+		if (a && _a.hide_onleave) showHideNavElements(cp.find('.tparrows'),_a,'hide',0);
+		if (b && _b.hide_onleave) showHideNavElements(cp.find('.tp-bullets'),_b,'hide',0);	
+		if (c && _c.hide_onleave) showHideNavElements(cp.find('.tp-thumbs'),_c,'hide',0);
+		if (d && _d.hide_onleave) showHideNavElements(cp.find('.tp-tabs'),_d,'hide',0);
 		
 		// Initialise Swipe Navigation
 		if (c) swipeAction(cp.find('.tp-thumbs'),opt);
 		if (d) swipeAction(cp.find('.tp-tabs'),opt);
-		if (opt.sliderType==="carousel") swipeAction(container,opt,true);
-		if ((opt.navigation.touch.touchOnDesktop==="on") || (opt.navigation.touch.touchenabled=="on" && _ISM)) swipeAction(container,opt,"swipebased");
+		if (opt.sliderType==='carousel') swipeAction(container,opt,true);
+		if ((opt.navigation.touch.touchOnDesktop==='on') || (opt.navigation.touch.touchenabled=='on' && _ISM)) swipeAction(container,opt,'swipebased');
 		
 		
 	}
@@ -314,20 +314,20 @@ jQuery.extend(true,_R, {
 
 var moveThumbsInPosition = function(container,opt) {
 
-		var thumbs = container.hasClass("tp-thumbs") ? ".tp-thumbs" : ".tp-tabs",
-			thumbmask = container.hasClass("tp-thumbs") ? ".tp-thumb-mask" : ".tp-tab-mask",
-			thumbsiw = container.hasClass("tp-thumbs") ? ".tp-thumbs-inner-wrapper" : ".tp-tabs-inner-wrapper",
-			thumb = container.hasClass("tp-thumbs") ? ".tp-thumb" : ".tp-tab",
+		var thumbs = container.hasClass('tp-thumbs') ? '.tp-thumbs' : '.tp-tabs',
+			thumbmask = container.hasClass('tp-thumbs') ? '.tp-thumb-mask' : '.tp-tab-mask',
+			thumbsiw = container.hasClass('tp-thumbs') ? '.tp-thumbs-inner-wrapper' : '.tp-tabs-inner-wrapper',
+			thumb = container.hasClass('tp-thumbs') ? '.tp-thumb' : '.tp-tab',
 			t=container.find(thumbmask),
 			el = t.find(thumbsiw),
 			thumbdir = opt.direction,							
-			tw = thumbdir==="vertical" ? t.find(thumb).first().outerHeight(true)+opt.space : t.find(thumb).first().outerWidth(true)+opt.space,					
-			tmw = thumbdir==="vertical" ? t.height() : t.width(),
+			tw = thumbdir==='vertical' ? t.find(thumb).first().outerHeight(true)+opt.space : t.find(thumb).first().outerWidth(true)+opt.space,					
+			tmw = thumbdir==='vertical' ? t.height() : t.width(),
 			ti = parseInt(t.find(thumb+'.selected').data('liindex'),0),		
 			me = tmw/tw,
-			ts = thumbdir==="vertical" ? t.height() : t.width(),
+			ts = thumbdir==='vertical' ? t.height() : t.width(),
 			tp = 0-(ti * tw),
-			els =  thumbdir==="vertical" ? el.height() : el.width(),
+			els =  thumbdir==='vertical' ? el.height() : el.width(),
 			curpos = tp < 0-(els-ts) ? 0-(els-ts) : curpos > 0 ? 0 : tp,
 			elp = el.data('offset');
 
@@ -339,15 +339,15 @@ var moveThumbsInPosition = function(container,opt) {
 		
 		curpos = curpos < 0-(els-ts) ? 0-(els-ts) : curpos > 0 ? 0 : curpos;
 
-		if (thumbdir!=="vertical" && t.width()>=el.width()) curpos = 0;
-		if (thumbdir==="vertical" && t.height()>=el.height()) curpos = 0;
+		if (thumbdir!=='vertical' && t.width()>=el.width()) curpos = 0;
+		if (thumbdir==='vertical' && t.height()>=el.height()) curpos = 0;
 
 
-		if (!container.hasClass("dragged")) {
-			if (thumbdir==="vertical")
-				el.data('tmmove',punchgs.TweenLite.to(el,0.5,{top:curpos+"px",ease:punchgs.Power3.easeInOut}));
+		if (!container.hasClass('dragged')) {
+			if (thumbdir==='vertical')
+				el.data('tmmove',punchgs.TweenLite.to(el,0.5,{top:curpos+'px',ease:punchgs.Power3.easeInOut}));
 			else
-				el.data('tmmove',punchgs.TweenLite.to(el,0.5,{left:curpos+"px",ease:punchgs.Power3.easeInOut}));
+				el.data('tmmove',punchgs.TweenLite.to(el,0.5,{left:curpos+'px',ease:punchgs.Power3.easeInOut}));
 			el.data('offset',curpos);	
 		}	
 	};
@@ -360,22 +360,22 @@ var rtt = function(f,tws,c,o,lis,wh) {
 		mask = h.find('.tp-'+wh+'-mask'),		
 		cw = o.width*f < o.min_width ? o.min_width : Math.round(o.width*f),
 		ch = Math.round((cw/o.width) * o.height),
-		iw = o.direction === "vertical" ? cw : (cw*lis) + ((o.space)*(lis-1)),
-		ih = o.direction === "vertical" ? (ch*lis) + ((o.space)*(lis-1)) : ch,
-		anm = o.direction === "vertical" ? {width:cw+"px"} : {height:ch+"px"};
+		iw = o.direction === 'vertical' ? cw : (cw*lis) + ((o.space)*(lis-1)),
+		ih = o.direction === 'vertical' ? (ch*lis) + ((o.space)*(lis-1)) : ch,
+		anm = o.direction === 'vertical' ? {width:cw+'px'} : {height:ch+'px'};
 			
 
 	tws.add(punchgs.TweenLite.set(h,anm));
-	tws.add(punchgs.TweenLite.set(ins,{width:iw+"px",height:ih+"px"}));
-	tws.add(punchgs.TweenLite.set(mask,{width:iw+"px",height:ih+"px"}));	
+	tws.add(punchgs.TweenLite.set(ins,{width:iw+'px',height:ih+'px'}));
+	tws.add(punchgs.TweenLite.set(mask,{width:iw+'px',height:ih+'px'}));	
 	var fin = ins.find('.tp-'+wh+'');
 	if (fin)
 		jQuery.each(fin,function(i,el) {
-			if (o.direction === "vertical")
-				tws.add(punchgs.TweenLite.set(el,{top:(i*(ch+parseInt((o.space===undefined? 0:o.space),0))),width:cw+"px",height:ch+"px"}));	
+			if (o.direction === 'vertical')
+				tws.add(punchgs.TweenLite.set(el,{top:(i*(ch+parseInt((o.space===undefined? 0:o.space),0))),width:cw+'px',height:ch+'px'}));	
 			else 
-			if (o.direction === "horizontal")
-				tws.add(punchgs.TweenLite.set(el,{left:(i*(cw+parseInt((o.space===undefined? 0:o.space),0))),width:cw+"px",height:ch+"px"}));	
+			if (o.direction === 'horizontal')
+				tws.add(punchgs.TweenLite.set(el,{left:(i*(cw+parseInt((o.space===undefined? 0:o.space),0))),width:cw+'px',height:ch+'px'}));	
 		});	
 	return tws;
 };
@@ -438,15 +438,15 @@ var normalizeWheel = function( event) /*object*/ {
 		};
 
 var initKeyboard = function(container,opt) {
-	if (opt.navigation.keyboardNavigation!=="on")  return;		
+	if (opt.navigation.keyboardNavigation!=='on')  return;		
 	jQuery(document).keydown(function(e){
-		if ((opt.navigation.keyboard_direction=="horizontal" && e.keyCode == 39) || (opt.navigation.keyboard_direction=="vertical" && e.keyCode==40)) {
-			opt.sc_indicator="arrow";
+		if ((opt.navigation.keyboard_direction=='horizontal' && e.keyCode == 39) || (opt.navigation.keyboard_direction=='vertical' && e.keyCode==40)) {
+			opt.sc_indicator='arrow';
 			opt.sc_indicator_dir = 0;
 			_R.callingNewSlide(container,1);					
 		}
-		if ((opt.navigation.keyboard_direction=="horizontal" && e.keyCode == 37) || (opt.navigation.keyboard_direction=="vertical" && e.keyCode==38)) {
-			opt.sc_indicator="arrow";
+		if ((opt.navigation.keyboard_direction=='horizontal' && e.keyCode == 37) || (opt.navigation.keyboard_direction=='vertical' && e.keyCode==38)) {
+			opt.sc_indicator='arrow';
 			opt.sc_indicator_dir = 1;
 			_R.callingNewSlide(container,-1);									
 		}
@@ -457,7 +457,7 @@ var initKeyboard = function(container,opt) {
 
 var initMouseScroll = function(container,opt) {			
 
-	if (opt.navigation.mouseScrollNavigation!=="on" && opt.navigation.mouseScrollNavigation!=="carousel") return;
+	if (opt.navigation.mouseScrollNavigation!=='on' && opt.navigation.mouseScrollNavigation!=='carousel') return;
 	opt.isIEEleven = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 	opt.isSafari = !!navigator.userAgent.match(/safari/i);
 	opt.ischrome = !!navigator.userAgent.match(/chrome/i);
@@ -475,7 +475,7 @@ var initMouseScroll = function(container,opt) {
 				fs = asi!=-1 && asi==0 || psi!=-1 && psi==0 ? true : false,
 				ls = asi!=-1 && asi==opt.slideamount-1 || psi!=1 && psi==opt.slideamount-1 ? true:false,				
 				ret = true;
-			if (opt.navigation.mouseScrollNavigation=="carousel") 
+			if (opt.navigation.mouseScrollNavigation=='carousel') 
 				fs = ls = false;								
 		
 
@@ -484,16 +484,16 @@ var initMouseScroll = function(container,opt) {
 			if(res.pixelY<bl) {
 				
 				if (!fs) {					
-					opt.sc_indicator="arrow";
-					if (opt.navigation.mouseScrollReverse!=="reverse") {
+					opt.sc_indicator='arrow';
+					if (opt.navigation.mouseScrollReverse!=='reverse') {
 						opt.sc_indicator_dir = 1;
 						_R.callingNewSlide(container,-1);	
 					} 
 					ret = false;
 				}
 				if (!ls) {
-					opt.sc_indicator="arrow";
-					if (opt.navigation.mouseScrollReverse==="reverse") {
+					opt.sc_indicator='arrow';
+					if (opt.navigation.mouseScrollReverse==='reverse') {
 						opt.sc_indicator_dir = 0;
 						_R.callingNewSlide(container,1);	
 					}					
@@ -503,16 +503,16 @@ var initMouseScroll = function(container,opt) {
 			 else 
 			 if(res.pixelY>tl) {				
 			 	if (!ls) {			 					 		
-				 	opt.sc_indicator="arrow";
-				 	if (opt.navigation.mouseScrollReverse!=="reverse") {
+				 	opt.sc_indicator='arrow';
+				 	if (opt.navigation.mouseScrollReverse!=='reverse') {
 						opt.sc_indicator_dir = 0;
 						_R.callingNewSlide(container,1);	
 					} 				
 					ret = false;
 				}
 				if (!fs) {
-					opt.sc_indicator="arrow";
-					if (opt.navigation.mouseScrollReverse==="reverse") {
+					opt.sc_indicator='arrow';
+					if (opt.navigation.mouseScrollReverse==='reverse') {
 						opt.sc_indicator_dir = 1;
 						_R.callingNewSlide(container,-1);	
 					}		
@@ -527,11 +527,11 @@ var initMouseScroll = function(container,opt) {
 
 		var tc = opt.c.offset().top-jQuery('body').scrollTop(),
 			bc = tc+opt.c.height();
-		if (opt.navigation.mouseScrollNavigation!="carousel") {
-			if (opt.navigation.mouseScrollReverse!=="reverse")
+		if (opt.navigation.mouseScrollNavigation!='carousel') {
+			if (opt.navigation.mouseScrollReverse!=='reverse')
 				if ((tc>0 && res.pixelY>0) || (bc<jQuery(window).height() && res.pixelY<0))
 					ret = true;
-			if (opt.navigation.mouseScrollReverse==="reverse")
+			if (opt.navigation.mouseScrollReverse==='reverse')
 				if ((tc<0 && res.pixelY<0) || (bc>jQuery(window).height() && res.pixelY>0))
 					ret = true;
 		} else {
@@ -562,24 +562,24 @@ var swipeAction = function(container,opt,vertical) {
 
 	// TOUCH ENABLED SCROLL
 	var _ = opt.carousel;
-	jQuery(".bullet, .bullets, .tp-bullets, .tparrows").addClass("noSwipe");
+	jQuery('.bullet, .bullets, .tp-bullets, .tparrows').addClass('noSwipe');
 		
 
 	
-	_.Limit = "endless";			
-	var notonbody =  _ISM || _R.get_browser()==="Firefox",
+	_.Limit = 'endless';			
+	var notonbody =  _ISM || _R.get_browser()==='Firefox',
 		SwipeOn =  container, //notonbody ? container : jQuery('body'),
-		pagescroll = opt.navigation.thumbnails.direction==="vertical" || opt.navigation.tabs.direction==="vertical"? "none" : "vertical",
-		swipe_wait_dir = opt.navigation.touch.swipe_direction || "horizontal";
+		pagescroll = opt.navigation.thumbnails.direction==='vertical' || opt.navigation.tabs.direction==='vertical'? 'none' : 'vertical',
+		swipe_wait_dir = opt.navigation.touch.swipe_direction || 'horizontal';
 
-	pagescroll = vertical == "swipebased" && swipe_wait_dir=="vertical" ? "none" : vertical ? "vertical" : pagescroll;
+	pagescroll = vertical == 'swipebased' && swipe_wait_dir=='vertical' ? 'none' : vertical ? 'vertical' : pagescroll;
 	
 	if (!jQuery.fn.swipetp) jQuery.fn.swipetp = jQuery.fn.swipe;
 	if (!jQuery.fn.swipetp.defaults || !jQuery.fn.swipetp.defaults.excludedElements) 
 		if (!jQuery.fn.swipetp.defaults) 
 			jQuery.fn.swipetp.defaults = new Object();
 
-	jQuery.fn.swipetp.defaults.excludedElements = "label, button, input, select, textarea, .noSwipe"
+	jQuery.fn.swipetp.defaults.excludedElements = 'label, button, input, select, textarea, .noSwipe'
 
 
 	SwipeOn.swipetp({			
@@ -604,35 +604,35 @@ var swipeAction = function(container,opt,vertical) {
 			
 				
 			// SWIPE OVER SLIDER, TO SWIPE SLIDES IN CAROUSEL MODE
-			if (opt.sliderType==="carousel" && 
-				(((phase==="move" || phase==="end" || phase=="cancel") &&  (opt.dragStartedOverSlider && !opt.dragStartedOverThumbs && !opt.dragStartedOverTabs))
-				 || (phase==="start" && withinslider>0 && withinthumbs===0 && withintabs===0))) {				
+			if (opt.sliderType==='carousel' && 
+				(((phase==='move' || phase==='end' || phase=='cancel') &&  (opt.dragStartedOverSlider && !opt.dragStartedOverThumbs && !opt.dragStartedOverTabs))
+				 || (phase==='start' && withinslider>0 && withinthumbs===0 && withintabs===0))) {				
 				
-				if (_ISM && (direction ==="up" || direction==="down")) return;
+				if (_ISM && (direction ==='up' || direction==='down')) return;
 			
 				opt.dragStartedOverSlider = true;
 				distance = (direction && direction.match(/left|up/g)) ?  Math.round(distance * -1) : distance = Math.round(distance * 1);
 				
 
 				switch (phase) {
-					case "start":								
+					case 'start':								
 						if (_.positionanim!==undefined) {											
 								_.positionanim.kill();																		
-								_.slide_globaloffset = _.infinity==="off" ? _.slide_offset : _R.simp(_.slide_offset, _.maxwidth);																		
+								_.slide_globaloffset = _.infinity==='off' ? _.slide_offset : _R.simp(_.slide_offset, _.maxwidth);																		
 						}
-						_.overpull = "none";																						
-						_.wrap.addClass("dragged");		
+						_.overpull = 'none';																						
+						_.wrap.addClass('dragged');		
 						
 					break;
-					case "move":	
+					case 'move':	
 										
-							opt.c.find('.tp-withaction').addClass("tp-temporarydisabled");
-							_.slide_offset = _.infinity==="off" ? _.slide_globaloffset + distance : _R.simp(_.slide_globaloffset + distance, _.maxwidth);
+							opt.c.find('.tp-withaction').addClass('tp-temporarydisabled');
+							_.slide_offset = _.infinity==='off' ? _.slide_globaloffset + distance : _R.simp(_.slide_globaloffset + distance, _.maxwidth);
 							
-							if (_.infinity==="off") {
-								var bb = _.horizontal_align==="center" ? ((_.wrapwidth/2-_.slide_width/2) - _.slide_offset) / _.slide_width : (0 - _.slide_offset) / _.slide_width;
+							if (_.infinity==='off') {
+								var bb = _.horizontal_align==='center' ? ((_.wrapwidth/2-_.slide_width/2) - _.slide_offset) / _.slide_width : (0 - _.slide_offset) / _.slide_width;
 								
-								if ((_.overpull ==="none" || _.overpull===0)  && (bb<0 || bb>opt.slideamount-1)) 
+								if ((_.overpull ==='none' || _.overpull===0)  && (bb<0 || bb>opt.slideamount-1)) 
 									_.overpull =  distance;
 								else
 								if (bb>=0 && bb<=opt.slideamount-1 && ((bb>=0 && distance>_.overpull) || (bb<=opt.slideamount-1 && distance<_.overpull)))
@@ -644,17 +644,17 @@ var swipeAction = function(container,opt,vertical) {
 							_R.organiseCarousel(opt,direction,true,true);									
 					break;
 
-					case "end":
-					case "cancel":		
+					case 'end':
+					case 'cancel':		
 							//duration !!
 							_.slide_globaloffset = _.slide_offset;	
-							_.wrap.removeClass("dragged");
+							_.wrap.removeClass('dragged');
 							_R.carouselToEvalPosition(opt,direction);							
 							opt.dragStartedOverSlider = false;
 							opt.dragStartedOverThumbs = false;
 							opt.dragStartedOverTabs = false;	
 							setTimeout(function() {
-								opt.c.find('.tp-withaction').removeClass("tp-temporarydisabled");							
+								opt.c.find('.tp-withaction').removeClass('tp-temporarydisabled');							
 							},19);
 					break;
 				}
@@ -662,18 +662,18 @@ var swipeAction = function(container,opt,vertical) {
 
 			// SWIPE OVER THUMBS OR TABS
 			if ((
-				((phase==="move" || phase==="end" || phase=="cancel") &&  (!opt.dragStartedOverSlider && (opt.dragStartedOverThumbs || opt.dragStartedOverTabs)))
+				((phase==='move' || phase==='end' || phase=='cancel') &&  (!opt.dragStartedOverSlider && (opt.dragStartedOverThumbs || opt.dragStartedOverTabs)))
 				 || 
-				(phase==="start" && (withinslider>0 && (withinthumbs>0 || withintabs>0))))) {				
+				(phase==='start' && (withinslider>0 && (withinthumbs>0 || withintabs>0))))) {				
 								
 				
 				if (withinthumbs>0) opt.dragStartedOverThumbs = true;
 				if (withintabs>0) opt.dragStartedOverTabs = true;
 				
-				var thumbs = opt.dragStartedOverThumbs ? ".tp-thumbs" : ".tp-tabs",
-					thumbmask = opt.dragStartedOverThumbs ? ".tp-thumb-mask" : ".tp-tab-mask",
-					thumbsiw = opt.dragStartedOverThumbs ? ".tp-thumbs-inner-wrapper" : ".tp-tabs-inner-wrapper",
-					thumb = opt.dragStartedOverThumbs ? ".tp-thumb" : ".tp-tab",
+				var thumbs = opt.dragStartedOverThumbs ? '.tp-thumbs' : '.tp-tabs',
+					thumbmask = opt.dragStartedOverThumbs ? '.tp-thumb-mask' : '.tp-tab-mask',
+					thumbsiw = opt.dragStartedOverThumbs ? '.tp-thumbs-inner-wrapper' : '.tp-tabs-inner-wrapper',
+					thumb = opt.dragStartedOverThumbs ? '.tp-thumb' : '.tp-tab',
 					_o = opt.dragStartedOverThumbs ? opt.navigation.thumbnails : opt.navigation.tabs;
 
 
@@ -681,55 +681,55 @@ var swipeAction = function(container,opt,vertical) {
 				var t= container.parent().find(thumbmask),
 					el = t.find(thumbsiw),
 					tdir = _o.direction,
-					els = tdir==="vertical" ? el.height() : el.width(),
-					ts =  tdir==="vertical" ? t.height() : t.width(),
-					tw = tdir==="vertical" ? t.find(thumb).first().outerHeight(true)+_o.space : t.find(thumb).first().outerWidth(true)+_o.space,	
+					els = tdir==='vertical' ? el.height() : el.width(),
+					ts =  tdir==='vertical' ? t.height() : t.width(),
+					tw = tdir==='vertical' ? t.find(thumb).first().outerHeight(true)+_o.space : t.find(thumb).first().outerWidth(true)+_o.space,	
 					newpos =  (el.data('offset') === undefined ? 0 : parseInt(el.data('offset'),0)),
 					curpos = 0;
 				
 				switch (phase) {
-					case "start":							
-						container.parent().find(thumbs).addClass("dragged");
-						newpos = tdir === "vertical" ? el.position().top : el.position().left;
+					case 'start':							
+						container.parent().find(thumbs).addClass('dragged');
+						newpos = tdir === 'vertical' ? el.position().top : el.position().left;
 						el.data('offset',newpos);
 						if (el.data('tmmove')) el.data('tmmove').pause();
 						
 					break;
-					case "move":	
+					case 'move':	
 							if (els<=ts) return false;
 															
 							curpos = newpos + distance;																					
-							curpos = curpos>0 ? tdir==="horizontal" ? curpos - (el.width() * (curpos/el.width() * curpos/el.width())) : curpos - (el.height() * (curpos/el.height() * curpos/el.height())) : curpos;
-							var dif = tdir==="vertical" ? 0-(el.height()-t.height()) : 0-(el.width()-t.width());
-							curpos = curpos < dif ? tdir==="horizontal" ? curpos + (el.width() * (curpos-dif)/el.width() * (curpos-dif)/el.width()) : curpos + (el.height() * (curpos-dif)/el.height() * (curpos-dif)/el.height()) : curpos;									
-							if (tdir==="vertical") 									
-								punchgs.TweenLite.set(el,{top:curpos+"px"});									
+							curpos = curpos>0 ? tdir==='horizontal' ? curpos - (el.width() * (curpos/el.width() * curpos/el.width())) : curpos - (el.height() * (curpos/el.height() * curpos/el.height())) : curpos;
+							var dif = tdir==='vertical' ? 0-(el.height()-t.height()) : 0-(el.width()-t.width());
+							curpos = curpos < dif ? tdir==='horizontal' ? curpos + (el.width() * (curpos-dif)/el.width() * (curpos-dif)/el.width()) : curpos + (el.height() * (curpos-dif)/el.height() * (curpos-dif)/el.height()) : curpos;									
+							if (tdir==='vertical') 									
+								punchgs.TweenLite.set(el,{top:curpos+'px'});									
 							else
-								punchgs.TweenLite.set(el,{left:curpos+"px"});	
+								punchgs.TweenLite.set(el,{left:curpos+'px'});	
 							
 
 					break;
 
-					case "end":
-					case "cancel":		
+					case 'end':
+					case 'cancel':		
 						
 						if (istt) {
 							curpos = newpos + distance;								
 															
-							curpos = tdir==="vertical" ? curpos < 0-(el.height()-t.height()) ? 0-(el.height()-t.height()) : curpos : curpos < 0-(el.width()-t.width()) ? 0-(el.width()-t.width()) : curpos;
+							curpos = tdir==='vertical' ? curpos < 0-(el.height()-t.height()) ? 0-(el.height()-t.height()) : curpos : curpos < 0-(el.width()-t.width()) ? 0-(el.width()-t.width()) : curpos;
 							curpos = curpos > 0 ? 0 : curpos;
 
 							curpos = Math.abs(distance)>tw/10 ? distance<=0 ? Math.floor(curpos/tw)*tw : Math.ceil(curpos/tw)*tw : distance<0 ? Math.ceil(curpos/tw)*tw : Math.floor(curpos/tw)*tw;
 
-							curpos = tdir==="vertical" ? curpos < 0-(el.height()-t.height()) ? 0-(el.height()-t.height()) : curpos : curpos < 0-(el.width()-t.width()) ? 0-(el.width()-t.width()) : curpos;
+							curpos = tdir==='vertical' ? curpos < 0-(el.height()-t.height()) ? 0-(el.height()-t.height()) : curpos : curpos < 0-(el.width()-t.width()) ? 0-(el.width()-t.width()) : curpos;
 							curpos = curpos > 0 ? 0 : curpos;
 							
-							if (tdir==="vertical")
-								punchgs.TweenLite.to(el,0.5,{top:curpos+"px",ease:punchgs.Power3.easeOut});
+							if (tdir==='vertical')
+								punchgs.TweenLite.to(el,0.5,{top:curpos+'px',ease:punchgs.Power3.easeOut});
 							else
-								punchgs.TweenLite.to(el,0.5,{left:curpos+"px",ease:punchgs.Power3.easeOut});
+								punchgs.TweenLite.to(el,0.5,{left:curpos+'px',ease:punchgs.Power3.easeOut});
 
-							curpos = !curpos ?  tdir==="vertical" ? el.position().top : el.position().left : curpos;	
+							curpos = !curpos ?  tdir==='vertical' ? el.position().top : el.position().left : curpos;	
 							
 							el.data('offset',curpos);								
 							el.data('distance',distance);
@@ -739,7 +739,7 @@ var swipeAction = function(container,opt,vertical) {
 								opt.dragStartedOverThumbs = false;
 								opt.dragStartedOverTabs = false;
 							},100);
-							container.parent().find(thumbs).removeClass("dragged");
+							container.parent().find(thumbs).removeClass('dragged');
 							
 							return false;
 						}
@@ -747,16 +747,16 @@ var swipeAction = function(container,opt,vertical) {
 				}
 			}									
 			else  {								
-				if (phase=="end" && !istt) {		
+				if (phase=='end' && !istt) {		
 					
-					opt.sc_indicator="arrow";	
+					opt.sc_indicator='arrow';	
 					
-					if ((swipe_wait_dir=="horizontal" && direction == "left") || (swipe_wait_dir=="vertical" && direction == "up")) {
+					if ((swipe_wait_dir=='horizontal' && direction == 'left') || (swipe_wait_dir=='vertical' && direction == 'up')) {
 						opt.sc_indicator_dir = 0;
 						_R.callingNewSlide(opt.c,1);
 						return false;
 					}
-					if ((swipe_wait_dir=="horizontal" && direction == "right") || (swipe_wait_dir=="vertical" && direction == "down")) {
+					if ((swipe_wait_dir=='horizontal' && direction == 'right') || (swipe_wait_dir=='vertical' && direction == 'down')) {
 						opt.sc_indicator_dir = 1;
 						_R.callingNewSlide(opt.c,-1);	
 						return false;
@@ -791,26 +791,26 @@ var callAllDelayedCalls = function(container,opt) {
 	var cp = container.parent();
 
 	if (ckNOLO(opt.navigation.arrows))
-			punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.arrows.hide_delay_mobile : opt.navigation.arrows.hide_delay,showHideNavElements,[cp.find('.tparrows'),opt.navigation.arrows,"hide"]);
+			punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.arrows.hide_delay_mobile : opt.navigation.arrows.hide_delay,showHideNavElements,[cp.find('.tparrows'),opt.navigation.arrows,'hide']);
 
 	if (ckNOLO(opt.navigation.bullets))
-		punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.bullets.hide_delay_mobile : opt.navigation.bullets.hide_delay,showHideNavElements,[cp.find('.tp-bullets'),opt.navigation.bullets,"hide"]);
+		punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.bullets.hide_delay_mobile : opt.navigation.bullets.hide_delay,showHideNavElements,[cp.find('.tp-bullets'),opt.navigation.bullets,'hide']);
 	
 	if (ckNOLO(opt.navigation.thumbnails))
-		punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.thumbnails.hide_delay_mobile : opt.navigation.thumbnails.hide_delay,showHideNavElements,[cp.find('.tp-thumbs'),opt.navigation.thumbnails,"hide"]);
+		punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.thumbnails.hide_delay_mobile : opt.navigation.thumbnails.hide_delay,showHideNavElements,[cp.find('.tp-thumbs'),opt.navigation.thumbnails,'hide']);
 	
 	if (ckNOLO(opt.navigation.tabs))
-		punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.tabs.hide_delay_mobile : opt.navigation.tabs.hide_delay,showHideNavElements,[cp.find('.tp-tabs'),opt.navigation.tabs,"hide"]);
+		punchgs.TweenLite.delayedCall(_ISM ? opt.navigation.tabs.hide_delay_mobile : opt.navigation.tabs.hide_delay,showHideNavElements,[cp.find('.tp-tabs'),opt.navigation.tabs,'hide']);
 };
 
 var showHideNavElements = function(container,opt,dir,speed) {
 	speed = speed===undefined ? 0.5 : speed;	
 	switch (dir) {
-		case "show":	
-			punchgs.TweenLite.to(container,speed, {autoAlpha:1,ease:punchgs.Power3.easeInOut,overwrite:"auto"});
+		case 'show':	
+			punchgs.TweenLite.to(container,speed, {autoAlpha:1,ease:punchgs.Power3.easeInOut,overwrite:'auto'});
 		break;
-		case "hide":
-			punchgs.TweenLite.to(container,speed, {autoAlpha:0,ease:punchgs.Power3.easeInOu,overwrite:"auto"});
+		case 'hide':
+			punchgs.TweenLite.to(container,speed, {autoAlpha:0,ease:punchgs.Power3.easeInOu,overwrite:'auto'});
 		break;		
 	}	
 
@@ -821,9 +821,9 @@ var showHideNavElements = function(container,opt,dir,speed) {
 var initArrows = function(container,o,opt) {
 
 	// SET oIONAL CLASSES
-	o.style = o.style === undefined ? "" : o.style;
-	o.left.style = o.left.style === undefined ? "" : o.left.style;
-	o.right.style = o.right.style === undefined ? "" : o.right.style;	
+	o.style = o.style === undefined ? '' : o.style;
+	o.left.style = o.left.style === undefined ? '' : o.left.style;
+	o.right.style = o.right.style === undefined ? '' : o.right.style;	
 		
 	
 	// ADD LEFT AND RIGHT ARROWS
@@ -835,12 +835,12 @@ var initArrows = function(container,o,opt) {
 		ra = container.find('.tp-rightarrow.tparrows');
 	if (o.rtl) {
 		// CLICK HANDLINGS ON LEFT AND RIGHT ARROWS
-		la.click(function() { opt.sc_indicator="arrow"; opt.sc_indicator_dir = 0;container.revnext();});
-		ra.click(function() { opt.sc_indicator="arrow"; opt.sc_indicator_dir = 1;container.revprev();});
+		la.click(function() { opt.sc_indicator='arrow'; opt.sc_indicator_dir = 0;container.revnext();});
+		ra.click(function() { opt.sc_indicator='arrow'; opt.sc_indicator_dir = 1;container.revprev();});
 	} else {
 		// CLICK HANDLINGS ON LEFT AND RIGHT ARROWS
-		ra.click(function() { opt.sc_indicator="arrow"; opt.sc_indicator_dir = 0;container.revnext();});
-		la.click(function() { opt.sc_indicator="arrow"; opt.sc_indicator_dir = 1;container.revprev();});
+		ra.click(function() { opt.sc_indicator='arrow'; opt.sc_indicator_dir = 0;container.revnext();});
+		la.click(function() { opt.sc_indicator='arrow'; opt.sc_indicator_dir = 1;container.revprev();});
 	}
 	// SHORTCUTS
 	o.right.j = container.find('.tp-rightarrow.tparrows');
@@ -858,7 +858,7 @@ var initArrows = function(container,o,opt) {
 	o.right.opt = opt;
 	
 
-	if (o.position=="outer-left" || o.position=="outer-right") opt.outernav = true;	
+	if (o.position=='outer-left' || o.position=='outer-right') opt.outernav = true;	
 };
 
 
@@ -868,9 +868,9 @@ var putVinPosition = function(el,o,opt) {
 	var elh = el.outerHeight(true),
 		elw = el.outerWidth(true),
 		oh = o.opt== undefined ? 0 : opt.conh == 0 ? opt.height : opt.conh,
-		by = o.container=="layergrid" ? opt.sliderLayout=="fullscreen" ? opt.height/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2 : (opt.autoHeight=="on" || (opt.minHeight!=undefined && opt.minHeight>0)) ? oh/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2  : 0 : 0,		
-		a = o.v_align === "top" ? {top:"0px",y:Math.round(o.v_offset+by)+"px"} : o.v_align === "center" ? {top:"50%",y:Math.round(((0-elh/2)+o.v_offset))+"px"} : {top:"100%",y:Math.round((0-(elh+o.v_offset+by)))+"px"};					
-	if (!el.hasClass("outer-bottom")) punchgs.TweenLite.set(el,a);	
+		by = o.container=='layergrid' ? opt.sliderLayout=='fullscreen' ? opt.height/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2 : (opt.autoHeight=='on' || (opt.minHeight!=undefined && opt.minHeight>0)) ? oh/2 - (opt.gridheight[opt.curWinRange]*opt.bh)/2  : 0 : 0,		
+		a = o.v_align === 'top' ? {top:'0px',y:Math.round(o.v_offset+by)+'px'} : o.v_align === 'center' ? {top:'50%',y:Math.round(((0-elh/2)+o.v_offset))+'px'} : {top:'100%',y:Math.round((0-(elh+o.v_offset+by)))+'px'};					
+	if (!el.hasClass('outer-bottom')) punchgs.TweenLite.set(el,a);	
 	
 };
 
@@ -878,8 +878,8 @@ var putHinPosition = function(el,o,opt) {
 	
 	var elh = el.outerHeight(true),
 		elw = el.outerWidth(true),
-		bx = o.container=="layergrid" ? opt.sliderType==="carousel" ? 0 : opt.width/2 - (opt.gridwidth[opt.curWinRange]*opt.bw)/2 : 0,
-		a = o.h_align === "left" ? {left:"0px",x:Math.round(o.h_offset+bx)+"px"} : o.h_align === "center" ? {left:"50%",x:Math.round(((0-elw/2)+o.h_offset))+"px"} : {left:"100%",x:Math.round((0-(elw+o.h_offset+bx)))+"px"};	
+		bx = o.container=='layergrid' ? opt.sliderType==='carousel' ? 0 : opt.width/2 - (opt.gridwidth[opt.curWinRange]*opt.bw)/2 : 0,
+		a = o.h_align === 'left' ? {left:'0px',x:Math.round(o.h_offset+bx)+'px'} : o.h_align === 'center' ? {left:'50%',x:Math.round(((0-elw/2)+o.h_offset))+'px'} : {left:'100%',x:Math.round((0-(elw+o.h_offset+bx)))+'px'};	
 	punchgs.TweenLite.set(el,a);
 };
 
@@ -900,54 +900,54 @@ var setNavElPositions = function(el,o,opt) {
 	putVinPosition(el,o,opt);
 	putHinPosition(el,o,opt);
 
-	if (o.position==="outer-left" && (o.sliderLayout=="fullwidth" || o.sliderLayout=="fullscreen")) 
-		punchgs.TweenLite.set(el,{left:(0-el.outerWidth())+"px",x:o.h_offset+"px"});
+	if (o.position==='outer-left' && (o.sliderLayout=='fullwidth' || o.sliderLayout=='fullscreen')) 
+		punchgs.TweenLite.set(el,{left:(0-el.outerWidth())+'px',x:o.h_offset+'px'});
 	else 
-	if (o.position==="outer-right" && (o.sliderLayout=="fullwidth" || o.sliderLayout=="fullscreen"))
-		punchgs.TweenLite.set(el,{right:(0-el.outerWidth())+"px",x:o.h_offset+"px"});
+	if (o.position==='outer-right' && (o.sliderLayout=='fullwidth' || o.sliderLayout=='fullscreen'))
+		punchgs.TweenLite.set(el,{right:(0-el.outerWidth())+'px',x:o.h_offset+'px'});
 	
 		
 	// MAX WIDTH AND HEIGHT BASED ON THE SOURROUNDING CONTAINER
-	if (el.hasClass("tp-thumbs") || el.hasClass("tp-tabs")) {
+	if (el.hasClass('tp-thumbs') || el.hasClass('tp-tabs')) {
 
 		var wpad = el.data('wr_padding'),
 			maxw = el.data('maxw'),
 			maxh = el.data('maxh'),			
-			mask = el.hasClass("tp-thumbs") ? el.find('.tp-thumb-mask') : el.find('.tp-tab-mask'),
+			mask = el.hasClass('tp-thumbs') ? el.find('.tp-thumb-mask') : el.find('.tp-tab-mask'),
 			cpt = parseInt((o.padding_top||0),0),
 			cpb = parseInt((o.padding_bottom||0),0);
 					
 		
 		// ARE THE CONTAINERS BIGGER THAN THE SLIDER WIDTH OR HEIGHT ?
-		if (maxw>ww && o.position!=="outer-left" && o.position!=="outer-right") {				
-			punchgs.TweenLite.set(el,{left:"0px",x:0,maxWidth:(ww-2*wpad)+"px"});
-			punchgs.TweenLite.set(mask,{maxWidth:(ww-2*wpad)+"px"});
+		if (maxw>ww && o.position!=='outer-left' && o.position!=='outer-right') {				
+			punchgs.TweenLite.set(el,{left:'0px',x:0,maxWidth:(ww-2*wpad)+'px'});
+			punchgs.TweenLite.set(mask,{maxWidth:(ww-2*wpad)+'px'});
 		} else {			
-			punchgs.TweenLite.set(el,{maxWidth:(maxw)+"px"});
-			punchgs.TweenLite.set(mask,{maxWidth:(maxw)+"px"});			
+			punchgs.TweenLite.set(el,{maxWidth:(maxw)+'px'});
+			punchgs.TweenLite.set(mask,{maxWidth:(maxw)+'px'});			
 		}
 		
-		if (maxh+2*wpad>wh && o.position!=="outer-bottom" && o.position!=="outer-top") {				
-			punchgs.TweenLite.set(el,{top:"0px",y:0,maxHeight:(cpt+cpb+(wh-2*wpad))+"px"});
-			punchgs.TweenLite.set(mask,{maxHeight:(cpt+cpb+(wh-2*wpad))+"px"});
+		if (maxh+2*wpad>wh && o.position!=='outer-bottom' && o.position!=='outer-top') {				
+			punchgs.TweenLite.set(el,{top:'0px',y:0,maxHeight:(cpt+cpb+(wh-2*wpad))+'px'});
+			punchgs.TweenLite.set(mask,{maxHeight:(cpt+cpb+(wh-2*wpad))+'px'});
 		} else {						
-			punchgs.TweenLite.set(el,{maxHeight:(maxh)+"px"});
-			punchgs.TweenLite.set(mask,{maxHeight:maxh+"px"});
+			punchgs.TweenLite.set(el,{maxHeight:(maxh)+'px'});
+			punchgs.TweenLite.set(mask,{maxHeight:maxh+'px'});
 		}
 		
-		if (o.position!=="outer-left" && o.position!=="outer-right") {
+		if (o.position!=='outer-left' && o.position!=='outer-right') {
 			cpt = 0;
 			cpb = 0;
 		}
 
 		// SPAN IS ENABLED
-		if (o.span===true && o.direction==="vertical") {
-			punchgs.TweenLite.set(el,{maxHeight:(cpt+cpb+(wh-2*wpad))+"px",height:(cpt+cpb+(wh-2*wpad))+"px",top:(0-cpt),y:0});					
+		if (o.span===true && o.direction==='vertical') {
+			punchgs.TweenLite.set(el,{maxHeight:(cpt+cpb+(wh-2*wpad))+'px',height:(cpt+cpb+(wh-2*wpad))+'px',top:(0-cpt),y:0});					
 			putVinPosition(mask,o,opt);
 		} else 
 
-		if (o.span===true && o.direction==="horizontal") {
-			punchgs.TweenLite.set(el,{maxWidth:"100%",width:(ww-2*wpad)+"px",left:0,x:0});					
+		if (o.span===true && o.direction==='horizontal') {
+			punchgs.TweenLite.set(el,{maxWidth:'100%',width:(ww-2*wpad)+'px',left:0,x:0});					
 			putHinPosition(mask,o,opt);
 		}
 	}
@@ -959,7 +959,7 @@ var addBullet = function(container,o,li,opt) {
 	
 	// Check if Bullet exists already ?		
 	if (container.find('.tp-bullets').length===0) {
-		o.style = o.style === undefined ? "" : o.style;		
+		o.style = o.style === undefined ? '' : o.style;		
 		container.append('<div class="tp-bullets '+o.style+' '+o.direction+'"></div>');
 	}
 	
@@ -981,14 +981,14 @@ var addBullet = function(container,o,li,opt) {
 		
 		//bgimage = li.data('thumb') !==undefined ? li.data('thumb') : li.find('.defaultimg').data('lazyload') !==undefined && li.find('.defaultimg').data('lazyload') !== 'undefined' ? li.find('.defaultimg').data('lazyload') : li.find('.defaultimg').data('src');
 
-	if (o.direction==="vertical") {
+	if (o.direction==='vertical') {
 		
-		b.css({top:((am-1)*h)+"px", left:"0px"});
+		b.css({top:((am-1)*h)+'px', left:'0px'});
 		bw.css({height:(((am-1)*h) + b.outerHeight()),width:b.outerWidth()});
 	}
 	else {
 		
-		b.css({left:((am-1)*w)+"px", top:"0px"});
+		b.css({left:((am-1)*w)+'px', top:'0px'});
 		bw.css({width:(((am-1)*w) + b.outerWidth()),height:b.outerHeight()});			
 	}
 	
@@ -996,24 +996,24 @@ var addBullet = function(container,o,li,opt) {
 	// SET LINK TO AND LISTEN TO CLICK
 	b.data('liref',linkto);
 	b.click(function() {
-		opt.sc_indicator="bullet";				
+		opt.sc_indicator='bullet';				
 		container.revcallslidewithid(linkto);
-		container.find('.tp-bullet').removeClass("selected");
-		jQuery(this).addClass("selected");
+		container.find('.tp-bullet').removeClass('selected');
+		jQuery(this).addClass('selected');
 
 	});		
 	// REMOVE HELP CLASS
-	b.removeClass("justaddedbullet");
+	b.removeClass('justaddedbullet');
 
 	// OUTTUER PADDING DEFAULTS
 	o.padding_top = parseInt((opt.carousel.padding_top||0),0),
 	o.padding_bottom = parseInt((opt.carousel.padding_bottom||0),0);
 	o.opt = opt;	
-	if (o.position=="outer-left" || o.position=="outer-right") opt.outernav = true;
+	if (o.position=='outer-left' || o.position=='outer-right') opt.outernav = true;
 
-	bw.addClass("nav-pos-hor-"+o.h_align);
-	bw.addClass("nav-pos-ver-"+o.v_align);
-	bw.addClass("nav-dir-"+o.direction);
+	bw.addClass('nav-pos-hor-'+o.h_align);
+	bw.addClass('nav-pos-ver-'+o.v_align);
+	bw.addClass('nav-dir-'+o.direction);
 
 	// PUT ALL CONTAINER IN POSITION
 	setNavElPositions(bw,o,opt);		
@@ -1032,26 +1032,26 @@ var cHex = function(hex,o){
 
 // ADD THUMBNAILS
 var addThumb = function(container,o,li,what,opt) {
-	var thumbs = what==="tp-thumb" ? ".tp-thumbs" : ".tp-tabs",
-		thumbmask = what==="tp-thumb" ? ".tp-thumb-mask" : ".tp-tab-mask",
-		thumbsiw = what==="tp-thumb" ? ".tp-thumbs-inner-wrapper" : ".tp-tabs-inner-wrapper",
-		thumb = what==="tp-thumb" ? ".tp-thumb" : ".tp-tab",
-		timg = what ==="tp-thumb" ? ".tp-thumb-image" : ".tp-tab-image";
+	var thumbs = what==='tp-thumb' ? '.tp-thumbs' : '.tp-tabs',
+		thumbmask = what==='tp-thumb' ? '.tp-thumb-mask' : '.tp-tab-mask',
+		thumbsiw = what==='tp-thumb' ? '.tp-thumbs-inner-wrapper' : '.tp-tabs-inner-wrapper',
+		thumb = what==='tp-thumb' ? '.tp-thumb' : '.tp-tab',
+		timg = what ==='tp-thumb' ? '.tp-thumb-image' : '.tp-tab-image';
 
 	o.visibleAmount = o.visibleAmount>opt.slideamount ? opt.slideamount : o.visibleAmount;	
 	o.sliderLayout = opt.sliderLayout;
 
 	// Check if THUNBS/TABS exists already ?		
 	if (container.parent().find(thumbs).length===0) {
-		o.style = o.style === undefined ? "" : o.style;		
+		o.style = o.style === undefined ? '' : o.style;		
 		
-		var spanw = o.span===true ? "tp-span-wrapper" : "",
-			addcontent = '<div class="'+what+'s '+spanw+" "+o.position+" "+o.style+'"><div class="'+what+'-mask"><div class="'+what+'s-inner-wrapper" style="position:relative;"></div></div></div>';
+		var spanw = o.span===true ? 'tp-span-wrapper' : '',
+			addcontent = '<div class="'+what+'s '+spanw+' '+o.position+' '+o.style+'"><div class="'+what+'-mask"><div class="'+what+'s-inner-wrapper" style="position:relative;"></div></div></div>';
 	
-		if (o.position==="outer-top")
+		if (o.position==='outer-top')
 			container.parent().prepend(addcontent)
 		else
-		if (o.position==="outer-bottom") 
+		if (o.position==='outer-bottom') 
 			container.after(addcontent);
 		else		
 			container.append(addcontent);
@@ -1060,7 +1060,7 @@ var addThumb = function(container,o,li,what,opt) {
 		o.padding_top = parseInt((opt.carousel.padding_top||0),0),
 		o.padding_bottom = parseInt((opt.carousel.padding_bottom||0),0);
 		 
-		if (o.position=="outer-left" || o.position=="outer-right") opt.outernav = true;
+		if (o.position=='outer-left' || o.position=='outer-right') opt.outernav = true;
 	}
 	
 	
@@ -1070,8 +1070,8 @@ var addThumb = function(container,o,li,what,opt) {
 		t = container.parent().find(thumbs),
 		tm = t.find(thumbmask),
 		tw = tm.find(thumbsiw),
-		maxw = o.direction==="horizontal" ? (o.width * o.visibleAmount) + (o.space*(o.visibleAmount-1)) : o.width,		
-		maxh = o.direction==="horizontal" ? o.height : (o.height * o.visibleAmount) + (o.space*(o.visibleAmount-1)),
+		maxw = o.direction==='horizontal' ? (o.width * o.visibleAmount) + (o.space*(o.visibleAmount-1)) : o.width,		
+		maxh = o.direction==='horizontal' ? o.height : (o.height * o.visibleAmount) + (o.space*(o.visibleAmount-1)),
 		inst = o.tmp;
 		jQuery.each(opt.thumbs[li.index()].params,function(i,obj) {
 			inst = inst.replace(obj.from,obj.to);
@@ -1088,50 +1088,50 @@ var addThumb = function(container,o,li,what,opt) {
 		h = b.outerHeight()+parseInt((o.space===undefined? 0:o.space),0);		
 
 	// FILL CONTENT INTO THE TAB / THUMBNAIL
-	b.find(timg).css({backgroundImage:"url("+opt.thumbs[li.index()].src+")"});
+	b.find(timg).css({backgroundImage:'url('+opt.thumbs[li.index()].src+')'});
 	
 
-	if (o.direction==="vertical") {		
-		b.css({top:((am-1)*h)+"px", left:"0px"});
+	if (o.direction==='vertical') {		
+		b.css({top:((am-1)*h)+'px', left:'0px'});
 		tw.css({height:(((am-1)*h) + b.outerHeight()),width:b.outerWidth()});
 	}
 	else {		
-		b.css({left:((am-1)*w)+"px", top:"0px"});
+		b.css({left:((am-1)*w)+'px', top:'0px'});
 		tw.css({width:(((am-1)*w) + b.outerWidth()),height:b.outerHeight()});			
 	}
 
 	t.data('maxw',maxw);
 	t.data('maxh',maxh);
 	t.data('wr_padding',o.wrapper_padding);
-	var position = o.position === "outer-top" || o.position==="outer-bottom" ? "relative" : "absolute",
-		_margin = (o.position === "outer-top" || o.position==="outer-bottom") && (o.h_align==="center") ? "auto" : "0";
+	var position = o.position === 'outer-top' || o.position==='outer-bottom' ? 'relative' : 'absolute',
+		_margin = (o.position === 'outer-top' || o.position==='outer-bottom') && (o.h_align==='center') ? 'auto' : '0';
 	
 
-	tm.css({maxWidth:maxw+"px",maxHeight:maxh+"px",overflow:"hidden",position:"relative"});			
-	t.css({maxWidth:(maxw)+"px",/*margin:_margin, */maxHeight:maxh+"px",overflow:"visible",position:position,background:o.wrapper_color,padding:o.wrapper_padding+"px",boxSizing:"contet-box"});
+	tm.css({maxWidth:maxw+'px',maxHeight:maxh+'px',overflow:'hidden',position:'relative'});			
+	t.css({maxWidth:(maxw)+'px',/*margin:_margin, */maxHeight:maxh+'px',overflow:'visible',position:position,background:o.wrapper_color,padding:o.wrapper_padding+'px',boxSizing:'contet-box'});
 
 	
 	
 	// SET LINK TO AND LISTEN TO CLICK	
 	b.click(function() {
 
-		opt.sc_indicator="bullet";			
+		opt.sc_indicator='bullet';			
 		var dis = container.parent().find(thumbsiw).data('distance');
 		dis = dis === undefined ? 0 : dis;
 		if (Math.abs(dis)<10) {					
 			container.revcallslidewithid(linkto);			
-			container.parent().find(thumbs).removeClass("selected");			
-			jQuery(this).addClass("selected");
+			container.parent().find(thumbs).removeClass('selected');			
+			jQuery(this).addClass('selected');
 		} 
 	});		
 	// REMOVE HELP CLASS
-	b.removeClass("justaddedthumb");
+	b.removeClass('justaddedthumb');
 
 	o.opt = opt;
 
-	t.addClass("nav-pos-hor-"+o.h_align);
-	t.addClass("nav-pos-ver-"+o.v_align);
-	t.addClass("nav-dir-"+o.direction);
+	t.addClass('nav-pos-hor-'+o.h_align);
+	t.addClass('nav-pos-ver-'+o.v_align);
+	t.addClass('nav-dir-'+o.direction);
 	
 	// PUT ALL CONTAINER IN POSITION		
 	setNavElPositions(t,o,opt);	
@@ -1140,17 +1140,17 @@ var addThumb = function(container,o,li,what,opt) {
 var setONHeights = function(o) {
 	var ot = o.c.parent().find('.outer-top'),
 		ob = o.c.parent().find('.outer-bottom');
-	o.top_outer = !ot.hasClass("tp-forcenotvisible") ? ot.outerHeight() || 0 : 0;
-	o.bottom_outer = !ob.hasClass("tp-forcenotvisible") ? ob.outerHeight() || 0 : 0;
+	o.top_outer = !ot.hasClass('tp-forcenotvisible') ? ot.outerHeight() || 0 : 0;
+	o.bottom_outer = !ob.hasClass('tp-forcenotvisible') ? ob.outerHeight() || 0 : 0;
 };
 
 
 // HIDE NAVIGATION ON PURPOSE
 var biggerNav = function(el,a,b,c) {				
 	if (a>b || b>c) 
-		el.addClass("tp-forcenotvisible")
+		el.addClass('tp-forcenotvisible')
 	else
-		el.removeClass("tp-forcenotvisible");
+		el.removeClass('tp-forcenotvisible');
 };
 
 })(jQuery);

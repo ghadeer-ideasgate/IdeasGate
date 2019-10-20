@@ -28,10 +28,10 @@
 
 	$special = $event.special.debouncedresize = {
 		setup: function() {
-			$( this ).on( "resize", $special.handler );
+			$( this ).on( 'resize', $special.handler );
 		},
 		teardown: function() {
-			$( this ).off( "resize", $special.handler );
+			$( this ).off( 'resize', $special.handler );
 		},
 		handler: function( event, execAsap ) {
 			// Save the context
@@ -39,7 +39,7 @@
 				args = arguments,
 				dispatch = function() {
 					// set correct event type
-					event.type = "debouncedresize";
+					event.type = 'debouncedresize';
 					$event.dispatch.apply( context, args );
 				};
 
@@ -867,15 +867,15 @@
 			
 				if ( !self ) {
 
-					logError( "cannot call methods on slicebox prior to initialization; " +
-					"attempted to call method '" + options + "'" );
+					logError( 'cannot call methods on slicebox prior to initialization; ' +
+					'attempted to call method \'' + options + '\'' );
 					return;
 				
 				}
 				
-				if ( !$.isFunction( self[options] ) || options.charAt(0) === "_" ) {
+				if ( !$.isFunction( self[options] ) || options.charAt(0) === '_' ) {
 
-					logError( "no such method '" + options + "' for slicebox self" );
+					logError( 'no such method \'' + options + '\' for slicebox self' );
 					return;
 				
 				}

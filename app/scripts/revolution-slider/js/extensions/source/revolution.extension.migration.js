@@ -32,13 +32,13 @@ var prepOptions = function(o) {
 		var p = new Object();		
 		p.type = o.parallax
 		p.levels = o.parallaxLevels;
-		p.bgparallax = o.parallaxBgFreeze == "on" ? "off" : "on";
+		p.bgparallax = o.parallaxBgFreeze == 'on' ? 'off' : 'on';
 
 		p.disable_onmobile = o.parallaxDisableOnMobile;
 		o.parallax = p;				
 	}
 	if (o.disableProgressBar === undefined) 
-		o.disableProgressBar = o.hideTimerBar || "off";
+		o.disableProgressBar = o.hideTimerBar || 'off';
 	
 	// BASIC FALLBACKS
 	if (o.startwidth || o.startheight) {
@@ -47,26 +47,26 @@ var prepOptions = function(o) {
 	}
 
 	if (o.sliderType===undefined) 
-		o.sliderType = "standard";
+		o.sliderType = 'standard';
 	
-	if (o.fullScreen==="on") 
-		o.sliderLayout = "fullscreen";
+	if (o.fullScreen==='on') 
+		o.sliderLayout = 'fullscreen';
 
-	if (o.fullWidth==="on") 
-		o.sliderLayout = "fullwidth";
+	if (o.fullWidth==='on') 
+		o.sliderLayout = 'fullwidth';
 	
 	if (o.sliderLayout===undefined)
-			o.sliderLayout = "auto";
+			o.sliderLayout = 'auto';
 
 
 	// NAVIGATION ARROW FALLBACKS
 	if (o.navigation===undefined) {
 		var n = new Object();
-		if (o.navigationArrows=="solo" || o.navigationArrows=="nextto") {
+		if (o.navigationArrows=='solo' || o.navigationArrows=='nextto') {
 			var a = new Object();
 			a.enable = true;
-			a.style = o.navigationStyle || "";
-			a.hide_onmobile = o.hideArrowsOnMobile==="on" ? true : false; 														
+			a.style = o.navigationStyle || '';
+			a.hide_onmobile = o.hideArrowsOnMobile==='on' ? true : false; 														
 			a.hide_onleave = o.hideThumbs >0 ? true : false;
 			a.hide_delay = o.hideThumbs>0 ? o.hideThumbs : 200;
 			a.hide_delay_mobile = o.hideNavDelayOnMobile || 1500;
@@ -86,46 +86,46 @@ var prepOptions = function(o) {
 						};
 			n.arrows = a;
 		}
-		if (o.navigationType=="bullet") {
+		if (o.navigationType=='bullet') {
 			var b = new Object();
-			b.style = o.navigationStyle || "";
+			b.style = o.navigationStyle || '';
 			b.enable=true;
-			b.hide_onmobile = o.hideArrowsOnMobile==="on" ? true : false; 														
+			b.hide_onmobile = o.hideArrowsOnMobile==='on' ? true : false; 														
 			b.hide_onleave = o.hideThumbs >0 ? true : false;
 			b.hide_delay = o.hideThumbs>0 ? o.hideThumbs : 200;
 			b.hide_delay_mobile = o.hideNavDelayOnMobile || 1500;
 			b.hide_under = 0;
-			b.direction="horizontal";
-			b.h_align=o.navigationHAlign || "center";
-			b.v_align=o.navigationVAlign || "bottom";
+			b.direction='horizontal';
+			b.h_align=o.navigationHAlign || 'center';
+			b.v_align=o.navigationVAlign || 'bottom';
 			b.space=5;
 			b.h_offset=o.navigationHOffset || 0;
 			b.v_offset=o.navigationVOffset || 20;
 			b.tmp='<span class="tp-bullet-image"></span><span class="tp-bullet-title"></span>';
 			n.bullets = b;
 		}
-		if (o.navigationType=="thumb") {
+		if (o.navigationType=='thumb') {
 			var t = new Object();
-			t.style=o.navigationStyle || "";
+			t.style=o.navigationStyle || '';
 			t.enable=true;
 			t.width=o.thumbWidth || 100;
 			t.height=o.thumbHeight || 50;
 			t.min_width=o.thumbWidth || 100;
 			t.wrapper_padding=2;
-			t.wrapper_color="#f5f5f5";
+			t.wrapper_color='#f5f5f5';
 			t.wrapper_opacity=1;
 			t.visibleAmount=o.thumbAmount || 3;
-			t.hide_onmobile = o.hideArrowsOnMobile==="on" ? true : false; 														
+			t.hide_onmobile = o.hideArrowsOnMobile==='on' ? true : false; 														
 			t.hide_onleave = o.hideThumbs >0 ? true : false;
 			t.hide_delay = o.hideThumbs>0 ? o.hideThumbs : 200;
 			t.hide_delay_mobile = o.hideNavDelayOnMobile || 1500;
 			t.hide_under = 0;
-			t.direction="horizontal";
+			t.direction='horizontal';
 			t.span=false;
-			t.position="inner";							
+			t.position='inner';							
 			t.space=2;
-			t.h_align=o.navigationHAlign || "center";
-			t.v_align=o.navigationVAlign || "bottom";
+			t.h_align=o.navigationHAlign || 'center';
+			t.v_align=o.navigationVAlign || 'bottom';
 			t.h_offset=o.navigationHOffset || 0;
 			t.v_offset=o.navigationVOffset || 20;
 			t.tmp='<span class="tp-thumb-image"></span><span class="tp-thumb-title"></span>';
@@ -134,10 +134,10 @@ var prepOptions = function(o) {
 		
 		o.navigation = n;
 
-		o.navigation.keyboardNavigation=o.keyboardNavigation || "on";				
-		o.navigation.onHoverStop=o.onHoverStop || "on";
+		o.navigation.keyboardNavigation=o.keyboardNavigation || 'on';				
+		o.navigation.onHoverStop=o.onHoverStop || 'on';
 		o.navigation.touch = {
-			touchenabled:o.touchenabled || "on",
+			touchenabled:o.touchenabled || 'on',
 			swipe_treshold : o.swipe_treshold ||75,
 			swipe_min_touches : o.swipe_min_touches || 1,
 			drag_block_vertical:o.drag_block_vertical || false
@@ -148,9 +148,9 @@ var prepOptions = function(o) {
 	if (o.fallbacks==undefined)
 		o.fallbacks  = {
 						isJoomla:o.isJoomla || false,
-						panZoomDisableOnMobile: o.parallaxDisableOnMobile || "off",
-						simplifyAll:o.simplifyAll || "on",
-						nextSlideOnWindowFocus:o.nextSlideOnWindowFocus || "off",	
+						panZoomDisableOnMobile: o.parallaxDisableOnMobile || 'off',
+						simplifyAll:o.simplifyAll || 'on',
+						nextSlideOnWindowFocus:o.nextSlideOnWindowFocus || 'off',	
 						disableFocusListener:o.disableFocusListener || true						
 					};
 
@@ -164,19 +164,19 @@ var prepLayerAnimations = function(container,opt) {
 		cw = container.width(),
 		ch = container.height();
 
-	c.skewfromleftshort = "x:-50;skX:85;o:0";
-	c.skewfromrightshort = "x:50;skX:-85;o:0";
-	c.sfl = "x:-50;o:0";
-	c.sfr = "x:50;o:0";
-	c.sft = "y:-50;o:0";
-	c.sfb = "y:50;o:0";
-	c.skewfromleft = "x:top;skX:85;o:0";
-	c.skewfromright = "x:bottom;skX:-85;o:0";
-	c.lfl = "x:top;o:0";
-	c.lfr = "x:bottom;o:0";
-	c.lft = "y:left;o:0";
-	c.lfb = "y:right;o:0";
-	c.fade = "o:0";
+	c.skewfromleftshort = 'x:-50;skX:85;o:0';
+	c.skewfromrightshort = 'x:50;skX:-85;o:0';
+	c.sfl = 'x:-50;o:0';
+	c.sfr = 'x:50;o:0';
+	c.sft = 'y:-50;o:0';
+	c.sfb = 'y:50;o:0';
+	c.skewfromleft = 'x:top;skX:85;o:0';
+	c.skewfromright = 'x:bottom;skX:-85;o:0';
+	c.lfl = 'x:top;o:0';
+	c.lfr = 'x:bottom;o:0';
+	c.lft = 'y:left;o:0';
+	c.lfb = 'y:right;o:0';
+	c.fade = 'o:0';
 	var src = (Math.random()*720-360)
 	
 	
@@ -189,9 +189,9 @@ var prepLayerAnimations = function(container,opt) {
 			rx = Math.random()*70-35,
 			ry = Math.random()*70-35,
 			ncc = cp.attr('class');
-		c.randomrotate = "x:{-400,400};y:{-400,400};sX:{0,2};sY:{0,2};rZ:{-180,180};rX:{-180,180};rY:{-180,180};o:0;";	
+		c.randomrotate = 'x:{-400,400};y:{-400,400};sX:{0,2};sY:{0,2};rZ:{-180,180};rX:{-180,180};rY:{-180,180};o:0;';	
 		
-		if (ncc.match("randomrotate")) cp.data('transform_in',c.randomrotate) 
+		if (ncc.match('randomrotate')) cp.data('transform_in',c.randomrotate) 
 			else
 		if (ncc.match(/\blfl\b/)) cp.data('transform_in',c.lfl) 
 			else
