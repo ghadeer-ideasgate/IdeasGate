@@ -302,7 +302,8 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.sticky {
 
 /* ==========slider=========== */
 #slider {
-  margin-bottom: 120px;
+  /* margin-bottom: 120px; */
+  margin-bottom:13%;
   max-height: 100vh;
   overflow: hidden;
   position: relative;
@@ -319,10 +320,10 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.sticky {
 }
 /* --- header end ---*/
 /* --- services start---- */
-#mainService {
-  padding-top: 70px !important;
+#mainServices {
+  padding-top: 130px !important;
 }
-#mainService>a>p{
+#mainServices a p{
   color:#000;
 }
 .icon-block {
@@ -358,6 +359,9 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.sticky {
 }
 .icon-block:hover h3,
 .middle h3 {
+  color: var(--white-text);
+}
+#mainServices .icon-block:hover p {
   color: var(--white-text);
 }
 .aboutcontent {
