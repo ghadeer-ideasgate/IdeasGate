@@ -753,7 +753,7 @@ ul.list-contact li {
 .page-link {
   color: #07090f;
 }
-.page-title .breadcrumb ul li:last-child {
+/* .page-title .breadcrumb ul li:last-child {
   margin: 0;
   padding: 0;
 }
@@ -768,7 +768,7 @@ ul.list-contact li {
 
 .page-title .breadcrumb ul li a:hover {
   color: #fff;
-}
+} */
 .bg-silver {
   background: #f9f9f9;
 }
@@ -786,12 +786,11 @@ ul.list-contact li {
   display: block;
   z-index: 1;
   background: #fff;
-  border: 1px solid #ee7d1c;
-  -webkit-transition: all 0.3s;
+  /* -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   -ms-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all 0.3s; */
   border-radius: var(--border-radius);
 }
 
@@ -807,9 +806,9 @@ ul.list-contact li {
   z-index: -1;
 }
 
-.contact-info:hover:after {
+/* .contact-info:hover:after {
   width: 100%;
-}
+} */
 
 .contact-info span {
   display: block;
