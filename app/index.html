@@ -95,7 +95,7 @@
   <!-------------------------------- slider Section---------------------------------->
   <section id="slider">
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="9500">
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="9500">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <h2 class="slide__title">نقدم أفكار أبداعية تتخطى توقعاتكم</h2>
@@ -105,10 +105,7 @@
           <h2 class="slide__title">نقدم أفكار أبداعية تتخطى توقعاتكم</h2>
           <img src="images/slider/slide-1@2x.png" class="d-block w-100" alt="...">
         </div>
-        <!-- <div class="carousel-item">
-              <h2 class="slide__title">نقدم أفكار أبداعية تتخطى توقعاتكم</h2>
-            <img src="images/slider/15.jpg" class="d-block w-100" alt="...">
-          </div> -->
+
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -118,7 +115,19 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div> -->
+    <div class="heroimg">
+    <div class="container-fluid">
+      <div class="row">
+        <div id="typed" class="typed">
+          <div id="typewriter">
+
+          </div>
+        </div>
+      </div>
     </div>
+    </div>
+
   </section>
   <!-------------------------------- Services Section---------------------------------->
 
@@ -126,6 +135,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-lg-4">
+
           <div class="icon-block ">
             <div class="whyicon"><i class="flaticon-web-design"></i></div>
             <h3>تصميم المواقع</h3>
@@ -727,11 +737,18 @@
   <!--
 
     <script src="scripts/slider.js" type="text/javascript"></script> -->
-  <!--
-  <script src="scripts/uncover.js"></script>
-  <script src="scripts/demo1.js"></script> -->
   <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
   <!-- end Slider Scripts -->
+  <script src="scripts/core.js"></script>
+  <script type="text/javascript">
+    const instance = new Typewriter('#typewriter', {
+      strings: ['نقدم أفكار أبداعية تتخطى توقعاتكم',
+      'أفكار أحلى من العسل تحلو بها الحياه',
+    'نغوص فى الأفكار من أجل إخراج أفضلها'],
+      autoStart: true,
+      loop: true,
+    });
+  </script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </body>

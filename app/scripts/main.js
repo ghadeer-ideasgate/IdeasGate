@@ -54,15 +54,34 @@
     setTimeout(function(){
       $('body').addClass('loaded');
     },500);
-    $('.owl-carousel').owlCarousel();
-  });
+    // $('.owl-carousel').owlCarousel();
+});
 
 })(jQuery, window, document);
-
-// $(document).ready(function(){
-//   $('.owl-carousel').owlCarousel();
-// });
 
 $('#clientsCarousel').carousel({
   interval: 5000
 });
+
+var typed5 = document.getElementById('typed5');
+
+var typewriter = new Typewriter(typed5, {
+
+      strings: ['Strings', 'To', 'Type'],
+
+      cursor: '|',
+
+      delay: 'natural', // 'natural' or Number
+
+      loop: false, // infinite loop
+
+      autoStart: true,
+
+      devMode: false,
+
+      wrapperClassName: 'typed',
+
+      cursorClassName: 'Typewriter__cursor',
+
+  });
+
