@@ -991,7 +991,10 @@ h2.slide__title {
         }
         .subscribe-form .btn-subscribe {
           width: 45%;}
+          .heroimg {
 
+            background-size: cover;
+        }
 }
 
 @media screen and (max-width: 425px){
@@ -1064,7 +1067,7 @@ ul.list-social.list-inline {
 div#typed {
   font-size: 25px;
   position: absolute;
-  top: 44%;
+  top: 40%;
   width: 417px;
   right: 8%;
 }
@@ -1072,9 +1075,15 @@ div#typed {
   color:var(--orange);
 }
 .btn-red{
+  padding: 10px 24px;
   background-color:var(--orange);
   color:#fff;
   box-shadow: 0 5px 15px rgba(238, 125, 28, 0.3)
+}
+.btn-red:hover{
+  background-color:var(--orange);
+  color:#fff;
+  box-shadow: 8px 25px 10px rgba(238, 125, 28, 0.3)
 }
 #typewriter + p {
   color: #000000a6;
