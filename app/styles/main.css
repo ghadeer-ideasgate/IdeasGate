@@ -464,8 +464,12 @@ h6.text-center.my-4.desc-text {
 .cbp-caption-defaultWrap img {
   border-radius: 6px;
 }
-.cbp-l-grid-projects-desc {
+.cbp-l-grid-projects-desc ,.cbp-l-grid-projects-title{
   font: 400 12px/18px var(--ar-font);
+}
+.cbp-l-grid-mosaic-projects .cbp-caption-activeWrap {
+  background-color: #59a3b6;
+  background-color: rgba(238, 125, 28, 0.52);
 }
 /* ----Portfolio end ----- */
 /* ----Clients start ----- */
@@ -901,8 +905,11 @@ iframe {
   width: 100%;
 }
 /* -=============services page==========*/
+.intro {
+  margin-bottom: 20px;
+}
 .marketsub{
-  margin: 20px 0;
+  margin: 20px 0 40px;
 }
 .marketsub h6 {
   font-weight: 600;
@@ -926,7 +933,7 @@ ul.web {
   line-height: 2;
 }
 #designInner{
-  color:#07090f;
+  color:#fff;
   background: var(--orange);
 }
 #designInner::after {
@@ -1053,10 +1060,23 @@ ul.list-social.list-inline {
   background: url('/images/slider/slide-1.png') 0% 107% no-repeat;
   height: 100vh;
 }
+
 div#typed {
-  font-size: 50px;
+  font-size: 25px;
   position: absolute;
-  top: 50%;
-  width: 400px;
+  top: 44%;
+  width: 417px;
   right: 8%;
+}
+.Typewriter__wrapper{
+  color:var(--orange);
+}
+.btn-red{
+  background-color:var(--orange);
+  color:#fff;
+  box-shadow: 0 5px 15px rgba(238, 125, 28, 0.3)
+}
+#typewriter + p {
+  color: #000000a6;
+  padding: 15px 0;
 }
