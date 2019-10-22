@@ -586,9 +586,9 @@ h6.text-center.my-4.desc-text {
   height: 100%;
   padding: 10%;
 }
-.whyicon:hover i {
+/* .whyicon:hover i {
   color: #ee7d1c;
-}
+} */
 .whyicon + p,
 .whyicon + ul {
   margin: 17px;
@@ -1115,7 +1115,7 @@ ul.list-social.list-inline {
 /* ======new slider */
 
 .heroimg{
-  background: url('/images/slider/slide-1.png') 0% 107% no-repeat;
+  background: url('../images/slider/slide-1.png') 0% 107% no-repeat;
   height: 100vh;
 }
 
