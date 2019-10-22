@@ -11,12 +11,13 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
-  <link rel="stylesheet" href="/node_modules/bootstrap-v4-rtl/dist/css/bootstrap-rtl.min.css" type="text/css" />
+  <link rel="stylesheet" href="styles/bootstrap-rtl.min.css" type="text/css" />
   <!-- endbuild -->
   <!-- slider css -->
   <!-- <link rel="stylesheet" type="text/css" href="styles/base.css" />
   <link rel="stylesheet" type="text/css" href="styles/uncover.css" /> -->
-  <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+  <!-- <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" /> -->
+
 
   <!-- endbuild -->
   <!-- font icon ionic -->
@@ -75,15 +76,15 @@
             <li class="nav-item">
               <a class="nav-link" href="portfolio.html">أعمالنا </a>
             </li>
-            <li class="nav-item">
+              <!-- <li class="nav-item">
               <a class="nav-link" href="blog.html">المدونة </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="contact.html">اتصل بنا </a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" method="get" action="/design-order.html">
-            <button id="contactForm" class="btn my-2 my-sm-0" type="submit">
+            <button id="contactForm" class="btn my-2 my-sm-0 btn-red" type="submit">
               اطلب تصميمك </button>
           </form>
           <!-- <div class="call d-flex"> <div class="headericon"><i class="flaticon-phone-call"></i></div><a href="tel:+12345678910">+12345678910</a></div> -->
@@ -164,8 +165,8 @@
               </div>
             </div>
           </div>
-          <div class=" col-lg-6 col-md-6">
-            <img src="images/02.png" alt="" class="img-fluid" />
+          <div class=" col-lg-6 col-md-6 servicesinnerpage">
+            <img src="images/02.png"  alt="" class="img-fluid" />
           </div>
         </div>
       </div>
@@ -751,12 +752,13 @@
     ga('send', 'pageview');
   </script>
   <!-- build:js scripts/vendor.js -->
-  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/node_modules/bootstrap-v4-rtl/dist/js/bootstrap.min.js"></script>
+  <!--   <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+ -->
+  <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
   <!-- endbuild -->
 
   <!-- portfolio scripts -->
-  <script src="/node_modules/animejs/lib/anime.min.js"></script>
+  <script src="scripts/anime.min.js"></script>
   <script src="scripts/imagesloaded.pkgd.min.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="scripts/jquery.cubeportfolio.min.js"></script>
