@@ -931,10 +931,10 @@ iframe {
   width: 100%;
 }
 /* -=============services page==========*/
-.intro {
-  /* margin-bottom: 20px; */
+/* .intro {
+  margin-bottom: 20px;
   margin: auto 0;
-}
+} */
 .marketsub {
   margin: 20px 0 40px;
   min-height: 230px;
