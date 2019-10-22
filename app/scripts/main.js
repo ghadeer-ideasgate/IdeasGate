@@ -54,11 +54,10 @@
     setTimeout(function(){
       $('body').addClass('loaded');
     },500);
-    // $('.owl-carousel').owlCarousel();
-});
+    $('.owl-carousel').owlCarousel();
+  });
 
 })(jQuery, window, document);
-
 $('#clientsCarousel').carousel({
   interval: 5000
 });

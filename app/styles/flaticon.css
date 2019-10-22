@@ -52,4 +52,9 @@ font-style: normal;
 .flaticon-location:before { content: "\f113"; }
 .flaticon-email:before { content: "\f114"; }
 .flaticon-phone:before { content: "\f115"; }
+.flaticon-target:before { content: "\f116"; }
+.flaticon-broken-link:before { content: "\f117"; }
+.flaticon-broken-link-1:before { content: "\f118"; }
+.flaticon-zoom-in:before { content: "\f119"; }
+.flaticon-loupe:before { content: "\f11a"; }
 
