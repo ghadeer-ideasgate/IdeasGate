@@ -308,10 +308,6 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.sticky {
   overflow: hidden;
   position: relative;
 }
-
-/* .headericon i.flaticon-phone-call:before {
-  font-size: 30px !important;
-} */
 .call {
   align-items: center;
   justify-content: space-around;
@@ -627,8 +623,6 @@ h6.text-center.my-4.desc-text {
   background-color: #080a10;
 }
 .copyright {
-  /* text-align: center; */
-  /* line-height: 18px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -731,6 +725,9 @@ ul.list-contact li {
 .rtl .navbar-nav .nav-item + .nav-item,
 [dir='rtl'] .navbar-nav .nav-item + .nav-item {
   margin-right: 0rem;
+}
+.nav-item {
+  min-width: 80px;
 }
 /* ----footer end ----- */
 /* ==============inner pages ======= */
