@@ -4,41 +4,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="description" content="ideasgate website" />
-  <meta name="keywords" content="web design,marketing,web solutions" />
-
+  <meta name="keywords" content="web design,marketing,web solutions,design,graphic,graphic desin" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Ideasgate ايديز جيت</title>
-
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="styles/bootstrap-rtl.min.css" type="text/css" />
   <!-- endbuild -->
-  <!-- slider css -->
-  <!-- <link rel="stylesheet" href="styles/base.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="styles/pater.css" /> -->
-
-  <!-- endbuild -->
+  
   <!-- font icon ionic -->
   <link rel="stylesheet" type="text/css" href="styles/flaticon.css">
   <!-- end font-icon -->
   <!-- portfolio css -->
   <link rel="stylesheet" href="styles/cubeportfolio.min.css" />
   <!-- end portfolio css -->
-  <!-- Owl-carousel-->
-  <!-- <link rel="stylesheet" href="styles/owl.carousel.min.css">
-     <link rel="stylesheet" href="styles/owl.theme.default.min.css"> -->
+
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css" />
 
   <!-- build:js scripts/modernizr.js -->
-    <!-- <script src="scripts/modernizr.js"></script>
+    <script src="scripts/modernizr.js"></script>
   <!-- endbuild -->
-  <style>
-  .serviceslist.col-md-8 {
-    text-align: justify;
-}
-  </style>
 </head>
 
 <body class="rtl">
@@ -49,6 +36,7 @@
         your experience.
       </p>
     <![endif]-->
+
   <!-- ==== Preloader start ==== -->
   <div id="loader-wrapper">
     <div id="loader"></div>
@@ -95,7 +83,6 @@
                اطلب تصميمك
             </button>
           </form>
-          <!-- <div class="call d-flex"> <div class="headericon"><i class="flaticon-phone-call"></i></div><a href="tel:+12345678910">+12345678910</a></div> -->
 
         </div>
     </nav>
@@ -277,7 +264,7 @@
                 </p>
                 <img src="images/02.png" class="img-fluid" alt="" style="
     display: inherit;
-    height: 37%;
+    height: 300px;
     margin: 0 auto;
 ">
               </div>
@@ -338,7 +325,6 @@
                   <div class="logo-footer">
                     <img src="images/logo.png" alt="footer-logos" />
                   </div>
-
 
                   <ul class="list-social list-inline">
                     <li>
@@ -467,22 +453,30 @@
     ga('send', 'pageview');
   </script>
   <!-- build:js scripts/vendor.js -->
-  <!--   <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
- -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
   <!-- endbuild -->
-  <!-- Slider Scripts -->
-  <script src="scripts/imagesloaded.pkgd.min.js"></script>
-  <script src="scripts/anime.min.js"></script>
-  <script src="scripts/slider.js" type="text/javascript"></script>
-  <!-- end Slider Scripts -->
-  <!-- portfolio scripts -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src="scripts/jquery.cubeportfolio.min.js"></script>
-  <!-- build:js scripts/main.js -->
-  <!-- <script src="scripts/owl.carousel.min.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script> -->
 
+  <!-- portfolio scripts -->
+  <script src="scripts/anime.min.js"></script>
+  <script src="scripts/imagesloaded.pkgd.min.js"></script>
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+  <script type="text/javascript" src="scripts/jquery.cubeportfolio.min.js"></script>
+
+
+  <!-- build:js scripts/main.js -->
+  <!-- Slider Scripts -->
+  <script src="scripts/core.js"></script>
+  <script type="text/javascript">
+    const instance = new Typewriter('#typewriter', {
+      strings: ['هوية إعلانية',
+      ' تصميم صفحة فيسبوك',
+    ' تصميم المواقع',
+  'تصميم الاعلانات والدعاية المطبوعة'],
+      autoStart: true,
+      loop: true,
+    });
+  </script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 </body>
