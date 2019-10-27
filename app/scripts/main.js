@@ -9,6 +9,40 @@
 
 (function($, window, document, undefined) {
   'use strict';
+ // init cubeportfolio
+ $('#js-grid-slider-team').cubeportfolio({
+  layoutMode: 'slider',
+  drag: true,
+  auto: false,
+  autoTimeout: 5000,
+  autoPauseOnHover: true,
+  showNavigation: false,
+  showPagination: true,
+  rewindNav: true,
+  scrollByPage: true,
+  gridAdjustment: 'responsive',
+  mediaQueries: [{
+      width: 1680,
+      cols: 5
+  }, {
+      width: 1350,
+      cols: 4
+  }, {
+      width: 800,
+      cols: 4
+  }, {
+      width: 480,
+      cols: 2
+  }, {
+      width: 320,
+      cols: 1
+  }],
+  gapHorizontal: 0,
+  gapVertical: 45,
+  caption: '',
+  displayType: 'fadeIn',
+  displayTypeSpeed: 400,
+});
 
   // init cubeportfolio
   $('#js-grid-mosaic-projects').cubeportfolio({
@@ -54,8 +88,7 @@
     setTimeout(function(){
       $('body').addClass('loaded');
     },500);
-    $('.owl-carousel').owlCarousel();
-  });
+     });
 
 })(jQuery, window, document);
 $('#clientsCarousel').carousel({
@@ -83,4 +116,3 @@ var typewriter = new Typewriter(typed5, {
       cursorClassName: 'Typewriter__cursor',
 
   });
-
