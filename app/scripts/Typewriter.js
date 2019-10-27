@@ -83,7 +83,7 @@ class Typewriter {
       addStyles(STYLES);
       window.___TYPEWRITER_JS_STYLES_ADDED___ = true;
     }
-    
+
     if(this.options.autoStart === true && this.options.strings) {
       this.typeOutAllStrings().start();
 		}
@@ -198,7 +198,7 @@ class Typewriter {
       const characters = typeof stringSplitter === 'function' ? stringSplitter(string) : string.split('');
       this.typeCharacters(characters, node);
     }
-  
+
     return this;
   }
 
@@ -237,7 +237,7 @@ class Typewriter {
         }
       }
     }
-    
+
     return this;
   }
 
@@ -340,7 +340,7 @@ class Typewriter {
     if(!cb || typeof cb !== 'function') {
       throw new Error('Callbak must be a function');
     }
-    
+
     this.addEventToQueue(EVENT_NAMES.CALL_FUNCTION, { cb, thisArg });
 
     return this;
@@ -359,7 +359,7 @@ class Typewriter {
     if(!characters || !Array.isArray(characters)) {
       throw new Error('Characters must be an array');
     }
-    
+
     characters.forEach(character => {
       this.addEventToQueue(EVENT_NAMES.TYPE_CHARACTER, { character, node });
     });
@@ -591,7 +591,7 @@ class Typewriter {
         } else {
           parentNode.appendChild(node);
         }
-        
+
         this.state.visibleNodes = [
           ...this.state.visibleNodes,
           {
