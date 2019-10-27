@@ -23,13 +23,13 @@
   gridAdjustment: 'responsive',
   mediaQueries: [{
       width: 1680,
-      cols: 5
+      cols: 6
   }, {
       width: 1350,
-      cols: 4
+      cols: 5
   }, {
       width: 800,
-      cols: 4
+      cols: 5
   }, {
       width: 480,
       cols: 2
