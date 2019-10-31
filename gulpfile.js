@@ -34,7 +34,7 @@ function scripts() {
   return src('app/scripts/**/*.js')
     .pipe($.plumber())
     .pipe($.if(!isProd, $.sourcemaps.init()))
-    .pipe($.babel())
+    //.pipe($.babel())
     .pipe($.if(!isProd, $.sourcemaps.write('.')))
     .pipe(dest('.tmp/scripts'))
     .pipe(server.reload({stream: true}));
@@ -69,21 +69,21 @@ async function modernizr() {
   await generateScript(config);
 }
 
-const lintBase = files => {
-  return src(files)
-    .pipe($.eslint({ fix: true }))
-    .pipe(server.reload({stream: true, once: true}))
-    .pipe($.eslint.format())
-    .pipe($.if(!server.active, $.eslint.failAfterError()));
-}
-function lint() {
-  return lintBase('app/scripts/**/*.js')
-    .pipe(dest('app/scripts'));
-};
-function lintTest() {
-  return lintBase('test/spec/**/*.js')
-    .pipe(dest('test/spec'));
-};
+// const lintBase = files => {
+//   return src(files)
+//     .pipe($.eslint({ fix: true }))
+//     .pipe(server.reload({stream: true, once: true}))
+//     .pipe($.eslint.format())
+//     .pipe($.if(!server.active, $.eslint.failAfterError()));
+// }
+// function lint() {
+//   return lintBase('app/scripts/**/*.js')
+//     .pipe(dest('app/scripts'));
+// };
+// function lintTest() {
+//   return lintBase('test/spec/**/*.js')
+//     .pipe(dest('test/spec'));
+// };
 
 function html() {
   return src('app/*.html')
@@ -135,7 +135,6 @@ function measureSize() {
 const build = series(
   clean,
   parallel(
-    lint,
     series(parallel(styles, scripts, modernizr), html),
     images,
     fonts,
@@ -184,7 +183,7 @@ function startTestServer() {
 
   watch('app/scripts/**/*.js', scripts);
   watch(['test/spec/**/*.js', 'test/index.html']).on('change', server.reload);
-  watch('test/spec/**/*.js', lintTest);
+
 }
 
 function startDistServer() {
