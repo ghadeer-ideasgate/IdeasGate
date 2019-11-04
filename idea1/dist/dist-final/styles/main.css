@@ -496,6 +496,8 @@ h6.text-center.my-4.desc-text {
 }
 .ce-feature-box-4 .content {
   min-height: auto;
+  line-height: 2;
+  text-align: justify;
 }
 .bgimg {
   background: url(../images/untitled/wesit-05.jpg) no-repeat 50% 50%;
@@ -1044,8 +1046,19 @@ span.contactPage a{
         .contact-info {
             min-height: 240px !important;
         }
+        .ce-feature-box-4 .img-box {
+          margin-bottom: 215px;
+      }
+}
+ul.list-contact li span {
+  display: inline-block;
 }
 @media screen and (max-width: 425px) {
+  .ce-feature-box-4 .img-box {
+    margin-bottom: 124%;
+}
+.ce-feature-box-4 .img-box .text-box {
+  top: 160px;}
   a.carousel-control-next,
   .carousel-control-prev {
     visibility: hidden;
@@ -1227,6 +1240,15 @@ span.contactPage a{
     position: relative;
     border-radius: 30% 0 30% 0;
   }
+  .ce-feature-box-4 .img-box .date-box {
+    position: absolute;
+    float: none!important;
+    padding: 12px;
+    left: 10px;
+    top: 9px;
+    font-size: 13px;
+    margin-bottom: 80px;
+}
 }
 .copyright p {
   font-size: 13px;
