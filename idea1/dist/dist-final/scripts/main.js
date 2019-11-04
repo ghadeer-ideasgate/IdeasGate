@@ -72,7 +72,16 @@
       lightboxTitleSrc: 'data-title',
       lightboxCounter: '<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>',
   });
-  new WOW().init();
+//   new WOW().init();
+ new WOW(
+    {
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // default
+    offset:       0,          // default
+    mobile:       false,       // default
+    live:         true        // default
+    }
+        ).init();
   /*-------------------------------------
       Preloader
   -------------------------------------*/

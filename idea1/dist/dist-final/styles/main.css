@@ -306,7 +306,7 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.sticky {
 .icon-block h3 {
   font-weight: 700;
   font-size: 18px;
-  color: #171f3c;
+  color: #000;
   margin-bottom: 25px;
 }
 .icon-block img {
@@ -1052,7 +1052,6 @@ span.contactPage a{
   }
   .cbp-caption-defaultWrap img {
     border-radius: 6px;
-    max-width: 200px;
     margin: 0 auto;
   }
   .companygoals {
@@ -1111,12 +1110,12 @@ span.contactPage a{
     bottom: -40px;
   }
   #typed {
-    font-size: 20px;
-    top: 7% !important;
+    font-size: 20px!important;
+    top: 5% !important;
     right: 3% !important;
   }
   #typed h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   #header {
     min-height: 97px;
@@ -1137,7 +1136,7 @@ span.contactPage a{
     background-size: 285%;
   }
   #slider {
-    margin-bottom: 25%;
+    margin-bottom: 15%;
   }
   .sectionPadding-120 {
     padding: 75px 0;
